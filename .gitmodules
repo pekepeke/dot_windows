@@ -1,0 +1,3 @@
+[submodule "lib/nodist"]
+	path = lib/nodist
+	url = git://github.com/marcelklehr/nodist.git
