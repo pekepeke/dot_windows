@@ -5,7 +5,11 @@ if not defined HOME (
 	goto EOF
 )
 if not exist %HOME%\.windows (
-	git clone git://github.com/pekepeke/dot_windows.git %HOME%\.windows
+	git clone --depth=1 git://github.com/pekepeke/dot_windows.git %HOME%\.windows
+	cd "%HOME%\.windows"
+	git submodule update --init
 )
 
-goto :EOF
+goto EOF
+
+:EOF

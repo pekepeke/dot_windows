@@ -26,9 +26,4 @@ if not exist "%TARGET%" (
 )
 
 
-::pik install devkit
-
-echo please download and install devkit
-echo http://rubyinstaller.org/downloads/
-pause
-
+pik install devkit

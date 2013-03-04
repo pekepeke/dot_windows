@@ -50,17 +50,29 @@ var REGIST_ENV_TYPE = "USER";		// "SYSTEM" or "USER"
 	
 	var home = env.Item("HOME")
 		, profile = sh.ExpandEnvironmentStrings("%USERPROFILE%");
-	var add_pathes = [];
-	
+	var add_pathes = [
+		"%HOME%/.windows/bin"
+		, "%HOME%/.windows/usr/bin"
+		, "%HOME%/.windows/usr/local/bin"
+		, "%HOME%/.windows/lib/nodist/bin"
+		, "%HOME%/.windows/lib/pik"
+		, "%HOME%/.windows/lib/pik/ruby/bin"
+	];
+
 	var path = env.Item("PATH")
 		, expanded_pathes = (sh.ExpandEnvironmentStrings("%PATH%") + "").split(delim)
 		, i, l
-		, bin;
+		, bin, is_changed = false;
 	for (i = 0, l = add_pathes.length; i<l ; i++) {
-		bin = add_pathes[i];
+		bin = add_pathes[i].replace(/\//g, '\\');
+		
 		//if (!path.match(new RegExp(bin.replace(/\\/g,'\\\\'), "i") ) ){
-		if (expanded_pathes.indexOf(bin) == -1) {
-			env.Item("PATH") = bin + delim + path;
+		if (expanded_pathes.indexOf( sh.ExpandEnvironmentStrings(bin) + "" ) == -1) {
+			path = bin + delim + path;
+			is_changed = true;
 		}
+	}
+	if (is_changed) {
+		env.Item("PATH") = path;
 	}
 })();
