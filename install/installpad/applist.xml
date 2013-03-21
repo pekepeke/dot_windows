@@ -1,0 +1,198 @@
+<ApplicationList>
+  <InstallationOptions>
+    <SilentInstall />
+    <SimultaneousDownloads>3</SimultaneousDownloads>
+  </InstallationOptions>
+  <Application>
+    <Name>Adobe Reader</Name>
+    <FileUrl>http://aihdownload.adobe.com/bin/live/install_reader11_jp_mssa_aih.exe</FileUrl>
+    <Comment>adobe reader</Comment>
+  </Application>
+  <Application>
+    <Name>FireFox</Name>
+    <FileUrl>http://download.mozilla.org/?product=firefox-1.5.0.7&amp;os=win&amp;lang=en-US</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Dropbox</Name>
+    <FileUrl>https://www.dropbox.com/download?plat=win</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+
+  <Application>
+    <Name>Sublime Text</Name>
+    <FileUrl>http://www.sublimetext.com/Sublime%20Text%201.3%20Setup.exe</FileUrl>
+    <Options>
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>FileZilla</Name>
+    <FileUrl>http://prdownloads.sourceforge.net/filezilla/FileZilla_3.2.7.1_win32-setup.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>VirtualBox</Name>
+    <FileUrl>http://download.virtualbox.org/virtualbox/4.2.10/VirtualBox-4.2.10-84105-Win.exe</FileUrl>
+    <Options>
+      <SilentInstall />
+    </Options>
+  </Application>
+  <!-- runtime -->
+  <Application>
+    <Name>Adobe AIR</Name>
+    <FileUrl>http://airdownload.adobe.com/air/win/download/3.6/AdobeAIRInstaller.exe</FileUrl>
+  </Application>
+  <Application>
+    <Name>Active Perl</Name>
+    <FileUrl>http://downloads.activestate.com/ActivePerl/releases/5.16.2.1602/ActivePerl-5.16.2.1602-MSWin32-x86-296513.msi</FileUrl>
+    <Options>
+      <Checked>false</Checked>
+    </Options>
+  </Application>
+  <Application>
+    <Name>Active Perl(x86)</Name>
+    <FileUrl>http://downloads.activestate.com/ActivePerl/releases/5.16.2.1602/ActivePerl-5.16.2.1602-MSWin32-x64-296513.msi</FileUrl>
+    <Options>
+      <Checked>false</Checked>
+    </Options>
+  </Application>
+  <Application>
+    <Name>Python 2</Name>
+    <FileUrl>http://downloads.activestate.com/ActivePython/releases/2.7.2.5/ActivePython-2.7.2.5-win32-x86.msi</FileUrl>
+    <Options>
+      <Checked>false</Checked>
+    </Options>
+  </Application>
+  <Application>
+    <Name>Python 2(x86)</Name>
+    <FileUrl>http://downloads.activestate.com/ActivePython/releases/2.7.2.5/ActivePython-2.7.2.5-win64-x64.msi</FileUrl>
+    <Options>
+      <Checked>false</Checked>
+    </Options>
+  </Application>
+  
+  <!-- util -->
+  <Application>
+    <Name>Pixus</Name>
+    <FileUrl>https://pixus.googlecode.com/files/pixus.air</FileUrl>
+  </Application>
+  <Application>
+    <Name>Inkscape</Name>
+    <FileUrl>http://umn.dl.sourceforge.net/sourceforge/inkscape/Inkscape-0.44-1.win32.exe</FileUrl>
+    <Options>
+      <Checked>false</Checked>
+    </Options>
+  </Application>
+
+  <Application>
+    <Name>Open Office</Name>
+    <FileUrl>http://downloads.sourceforge.net/project/openofficeorg.mirror/localized/ja/3.4.1/Apache_OpenOffice_incubating_3.4.1_Win_x86_install_ja.exe?r=http%3A%2F%2Fwww.openoffice.org%2Fdownload%2Findex.html&ts=1363737659&use_mirror=jaist</FileUrl>
+    <Options>
+      <Checked>false</Checked>
+    </Options>
+  </Application>
+  <Application>
+    <Name>Libre Office</Name>
+    <FileUrl>http://download.documentfoundation.org/libreoffice/stable/4.0.1/win/x86/LibreOffice_4.0.1_Win_x86.msi</FileUrl>
+    <Options>
+      <Checked>false</Checked>
+    </Options>
+  </Application>
+  <Application>
+    <Name>Tortoise SVN</Name>
+    <FileUrl>
+      http://superb-east.dl.sourceforge.net/sourceforge/tortoisesvn/TortoiseSVN-1.4.0.7501-win32-svn-1.4.0.msi
+    </FileUrl>
+    <Options>
+      <Checked>false</Checked>
+    </Options>
+  </Application>
+  <Application>
+    <Name>WinSCP</Name>
+    <FileUrl>http://easynews.dl.sourceforge.net/sourceforge/winscp/winscp381setup.exe</FileUrl>
+  </Application>
+
+  <Application>
+    <Name>Explzh</Name>
+    <FileUrl>http://www.ponsoftware.com/archiver/explzh/explz710.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>WinMerge</Name>
+    <FileUrl>http://www.geocities.co.jp/SiliconValley-SanJose/8165/winmerge-2.14.0-jp-4-exe.zip</FileUrl>
+    <Options>
+    </Options>
+  </Application>
+  <Application>
+    <Name>WinMerge(x86)</Name>
+    <FileUrl>http://www.geocities.co.jp/SiliconValley-SanJose/8165/winmerge-2.14.0-jp-4-x64-exe.zip</FileUrl>
+    <Options>
+    </Options>
+  </Application>
+  <Application>
+    <Name>CCleaner</Name>
+    <FileUrl>http://download.piriform.com/ccsetup328.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Recuva</Name>
+    <FileUrl>http://download.piriform.com/rcsetup145.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <!-- communication -->
+  <Application>
+    <Name>Skype</Name>
+    <FileUrl>http://download.skype.com/961f38761d13c0d87a888e2ccdad86fa/SkypeSetup.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>TeamViewer</Name>
+    <FileUrl>http://www.teamviewer.com/download/TeamViewer_Setup.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <!-- media -->
+  <Application>
+    <Name>VLC</Name>
+    <FileUrl>http://sourceforge.net/projects/vlc/files/1.1.2/win32/vlc-1.1.2-win32.exe/download</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+
+
+  <Application>
+    <Name>iTunes</Name>
+    <FileUrl>http://appldnld.apple.com/iTunes9/061-8726.20100722.Vbgth/iTunesSetup.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+      <Checked>false</Checked>
+    </Options>
+  </Application>
+
+</ApplicationList>

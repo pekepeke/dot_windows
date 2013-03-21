@@ -1,0 +1,282 @@
+<ApplicationList>
+  <InstallationOptions>
+    <SilentInstall />
+    <SimultaneousDownloads>3</SimultaneousDownloads>
+  </InstallationOptions>
+  <Application>
+    <Name>Screenpresso</Name>
+    <FileUrl>http://www.screenpresso.com/binaries/Screenpresso.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Dropbox</Name>
+    <FileUrl>https://www.dropbox.com/download?plat=win</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>iTunes</Name>
+    <FileUrl>http://appldnld.apple.com/iTunes9/061-8726.20100722.Vbgth/iTunesSetup.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>VLC</Name>
+    <FileUrl>http://sourceforge.net/projects/vlc/files/1.1.2/win32/vlc-1.1.2-win32.exe/download</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Sublime Text</Name>
+    <FileUrl>http://www.sublimetext.com/Sublime%20Text%201.3%20Setup.exe</FileUrl>
+    <Options>
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Notepad++</Name>
+    <FileUrl>http://download.tuxfamily.org/notepadplus/5.7/npp.5.7.Installer.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>SPlayer</Name>
+    <FileUrl>http://file.splayer.org/SPlayerSetup.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>MiniTask</Name>
+    <FileUrl>http://www.minitask.org/air/MiniTask.air</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>FileZilla</Name>
+    <FileUrl>http://prdownloads.sourceforge.net/filezilla/FileZilla_3.2.7.1_win32-setup.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Pidgin</Name>
+    <FileUrl>http://sourceforge.net/projects/pidgin/files/Pidgin/pidgin-2.7.1.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Dropbox</Name>
+    <FileUrl>http://cdn.dropbox.com/Dropbox%200.7.110.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>VirtualBox</Name>
+    <FileUrl>http://download.virtualbox.org/virtualbox/3.2.6/VirtualBox-3.2.6-63112-Win.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>IMAPSize</Name>
+    <FileUrl>http://www.broobles.com/imapsize/IMAPSize_037_Setup.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>CCleaner</Name>
+    <FileUrl>http://download.piriform.com/ccsetup234.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>CDBurnerXP</Name>
+    <FileUrl>http://ember.cdburnerxp.se/cdbxp_setup_4.3.7.2307.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Saezuri</Name>
+    <FileUrl>http://projects.playwell.jp/Saezuri/beta/Saezuri-0.2.3.air</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Bvckup</Name>
+    <FileUrl>http://bvckup.com/~mint/pepper/tillkruess/downloads/tracker.php?url=http://www.bvckup.com/files/bvckup-setup-1.0.0.355.exe&amp;force</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>ImgBurn</Name>
+    <FileUrl>http://download.imgburn.com/SetupImgBurn_2.5.1.0.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Recuva</Name>
+    <FileUrl>http://download.piriform.com/rcsetup138.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Mintty</Name>
+    <FileUrl>http://mintty.googlecode.com/files/mintty-0.7.1-cygwin15.zip</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>TrueCrypt</Name>
+    <FileUrl>http://www.truecrypt.org/download/transient/3290a994df/TrueCrypt%20Setup%207.0.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>7Zip</Name>
+    <FileUrl>http://downloads.sourceforge.net/sevenzip/7z465.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>HandBrake</Name>
+    <FileUrl>http://handbrake.fr/rotation.php?file=HandBrake-0.9.4-Win_GUI.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>TeraCopy</Name>
+    <FileUrl>http://www.teracopy.com/files/teracopy.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>TestDisk</Name>
+    <FileUrl>http://www.cgsecurity.org/testdisk-6.11.3.win.zip</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Console2</Name>
+    <FileUrl>http://downloads.sourceforge.net/project/console/console-devel/2.00/Console-2.00b146-Beta_32bit.zip?use_mirror=switch&amp;ts=1280758860</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Uploadr</Name>
+    <FileUrl>http://localhostruploadr.com/download/latest-installable</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Notes2</Name>
+    <FileUrl>http://ufridman.org/soft/Notes2.zip</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+    </Options>
+  </Application>
+  <Application>
+    <Name>ClipGrab</Name>
+    <FileUrl>http://clipgrab.de/download/clipgrab-3.0.7.1.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Putty</Name>
+    <FileUrl>http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Skype</Name>
+    <FileUrl>http://download.skype.com/partner/trackable/404/SkypeSetup.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>TeamViewer</Name>
+    <FileUrl>http://www.teamviewer.com/download/TeamViewer_Setup.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Rainlendar</Name>
+    <FileUrl>http://www.rainlendar.net/download/Rainlendar-Lite-2.7-32bit.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Windows Live Writer</Name>
+    <FileUrl>http://g.live.com/1rewlive3/de/wlsetup-web.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+    </Options>
+  </Application>
+  <Application>
+    <Name>Screenpresso</Name>
+    <FileUrl>http://www.screenpresso.com/binaries/Screenpresso.exe</FileUrl>
+    <Options>
+      <DownloadLatestVersion />
+      <SilentInstall />
+    </Options>
+  </Application>
+</ApplicationList>
