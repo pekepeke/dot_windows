@@ -1,0 +1,22 @@
+Windows Registry Editor Version 5.00
+
+; +-------------------------+-----------------+------------+----------+
+; | 本来のキー　　　　　　　| 変換後のキー　　| DWORD 値　 | 逆読み　 |
+; +-------------------------+-----------------+------------+----------+
+; | CapsLock(0x3A)　　　　　| LCtrl(0x1D)　　 | 0x003A001D | 1D003A00 |
+; | 無変換(0x7B)　　　　　　| LAlt(0x38)　　　| 0x007B0038 | 38007B00 |
+; | 無変換(0x7B)　　　　　　| LCtrl(0x1D)　　 | 0x007B001D | 1D007B00 |
+; | 変換(0x79)　　　　　　　| LWinKey(0xE05B) | 0x0079E05B | 5BE07900 |
+; | ひらがな/カタカナ(0x70) | App.Key(0xE05D) | 0x0070E05D | 5DE07000 |
+; +-------------------------+-----------------+------------+----------+
+; CapsLock を 左Ctrl にする場合の例
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+"Scancode Map" = hex:00,00,00,00, 00,00,00,00, 02,00,00,00, 1D,00,3A,00, 00,00,00,00
+
+; CapsLock と 左Ctrl を交換する場合の例
+;[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+;"Scancode Map" = hex:00,00,00,00, 00,00,00,00, 03,00,00,00, 1D,00,3A,00, 3A,00,1D,00, 00,00,00,00
+
+; CapsLock と 無変換 を 左Ctrl に、変換 を 左Windowsにする場合の例
+;[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+;"Scancode Map" = hex:00,00,00,00, 00,00,00,00, 04,00,00,00, 1D,00,3A,00, 1D,00,7B,00, 5B,E0,79,00, 00,00,00,00
