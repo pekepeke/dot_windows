@@ -2,3 +2,7 @@
 usr/bin
 usr/local/bin
 lib/chocolatey
+lib/chef/.ruby-version
+lib/chef/tmp
+lib/chef/cookbooks
+

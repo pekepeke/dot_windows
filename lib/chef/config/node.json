@@ -1,0 +1,9 @@
+{
+  "platform": "windows",
+  "run_list": [
+    "recipe[windows]",
+    "recipe[virtualbox]",
+    "recipe[win-apps]"
+  ]
+}
+
