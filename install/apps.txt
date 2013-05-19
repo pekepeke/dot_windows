@@ -1,0 +1,64 @@
+# Browser
+Firefox
+GoogleChrome
+thunderbird
+
+# System
+ChocolateyGUI
+ChocolateyPackageUpdater
+ccleaner
+defraggler
+
+# IM
+skype
+dropbox
+keepass
+googledrive
+
+# Editor
+sublimetext2
+
+# Lang
+ActivePerl
+# StrawberryPerl
+python
+javaruntime
+java.jdk
+AdobeAIR
+
+# Graphic
+paint.net
+OptiPNG
+libjpeg-turbo
+IrfanView
+
+# Dev
+Console2
+virtualbox
+
+vagrant
+sysinternals
+procexp
+# fiddler
+fiddler4
+filezilla
+winscp
+winmerge
+baretail
+git
+curl
+wget
+SourceTree
+
+Gow
+dependencywalker
+# libreoffice
+PowerGUI
+# WinPcap
+apache2
+# mongodb
+mysql
+# postgresql
+php
+P4Merge
+android-sdk
