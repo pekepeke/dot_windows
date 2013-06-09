@@ -1,8 +1,12 @@
 .DS_Store
 usr/bin
 usr/local/bin
+usr/dll
+usr/local/dll
 lib/chocolatey
 lib/chef/.ruby-version
 lib/chef/tmp
 lib/chef/cookbooks
+lib/chef/.bundle
+lib/chef/vendor
 
