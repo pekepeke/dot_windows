@@ -1,0 +1,48 @@
+;[.extension;
+;MenuText|CommandLine|WorkingDirectory|nShow
+;]
+
+
+;[C:\WINDOWS\explorer.exe;C:\Program Files\Internet Explorer\iexplore.exe
+;[C:\Windows\explorer.exe;C:\Program Files\Internet Explorer\iexplore.exe
+[C:\Windows\explorer.exe
+プログラムの追加と削除(&A)|"appwiz.cpl"
+マイドキュメント(&M)|"%P" ::{450D8FBA-AD25-11D0-98A8-0800361B1103}
+ごみ箱(&T)|"%P" ::{645FF040-5081-101B-9F08-00AA002F954E}
+ネットワーク接続(&C)|"%P" ::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\::{21EC2020-3AEA-1069-A2DD-08002B30309D}\::{7007ACC7-3202-11D1-AAD2-00805FC1270E}
+プリンタ(&R)|"%P" ::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\::{2227A280-3AEA-1069-A2DE-08002B30309D}
+イベントビューア(&I)|"eventvwr.exe"
+サウンド(&S)|"mmsys.cpl"
+管理ツール(&A)|"%P" ::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\::{21EC2020-3AEA-1069-A2DD-08002B30309D}\::{D20EA4E1-3957-11d2-A40B-0C5020524153}
+マイ コンピュータ(&C)|"%P" ::{20D04FE0-3AEA-1069-A2D8-08002B30309D}
+コントロールパネル(&P)|"%P" ::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\::{21EC2020-3AEA-1069-A2DD-08002B30309D}
+ネットワークコンピュータ(&N)|"%P" ::{208D2C60-3AEA-1069-A2D7-08002B30309D}
+;受信トレイ|"%P" ::{00020D75-0000-0000-C000-000000000046}
+;ブリーフケース|"%P" ::{85BBD920-42A0-1069-A2E4-08002B30309D}
+;ダイヤルアップネットワーク|"%P" ::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\::{992CFFA0-F557-101A-88EC-00DD010CCC48}
+;インターネットエクスプローラ(&I)|"%P" ::{871C5380-42A0-1069-A2EA-08002B30309D}
+;タスク(&T)|"%P" ::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\::{D6277990-4C6A-11CF-8D87-00AA0060F5BF}
+-------------------------------------------------
+]
+
+[.\\\;
+cmd.exe(&C)|cmd.exe|"%P"
+ckw.exe(&K)|ckw.exe -cd "%P"
+]
+
+[.***;
+親フォルダを開く(&O)|"%D"
+]
+
+[.exe;
+実行(&E)|"%P"
+引数を渡して実行(&P)|"%W\WSH\RunCommand.vbs" "%P"
+-------------------------------------------------
+再起動(&R)|qt.exe /reboot %P
+強制終了(&T)|qt.exe %P
+-------------------------------------------------
+アイドル(&4)|qt.exe /priority1 %P
+通常(&3)|qt.exe /priority2 %P
+高(&2)|qt.exe /priority3 %P
+リアルタイム(&1)|qt.exe /priority4 %P
+]

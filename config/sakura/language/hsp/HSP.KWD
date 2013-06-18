@@ -1,0 +1,657 @@
+// Hot Soup Processor キーワード定義ファイル
+// 2002/08/01	すい
+// --------------------------------------------------
+// HSP 2.55 付属 HTML より抜粋
+// http://www.onionsoft.net/hsp/
+// --------------------------------------------------
+// ※ この設定ファイルの最新版は
+// 　 http://www.egroups.co.jp/files/sakura-editor/User/Data/ にあります。
+// ※ このファイルの履歴はファイル末尾にあります。
+// ************************************************************************* //
+// ＜設定手順＞
+//
+// １．メニュー操作で [ツール(T)]→[共通設定(C)]（または [Ctrl]+[6]）にて
+// 　　「共通設定」を出す。そして [強調キーワード] タブにて
+//
+// 　　(1)[セット追加] ボタン押して名称「Hot Soup Processor」と入力し、
+// 　　   [OK]ボタンを押して設定する。
+// 　　(2)次に [インポート] ボタンを押して、このファイルを指定して取り込む。
+// 　　(3)「キーワードの英大文字小文字区別(C)」にはチェックが *付いていない* 
+// 　　   事を確認する。（チェックが付いていたらチェックをはずす）
+// 　　(4)「共通設定」を [OK] ボタンを押して閉じる。
+//
+// ２．メニュー操作で [ツール(T)]→[タイプ別設定一覧(L)]（または [Ctrl]+[4]）
+// 　　にて「タイプ別設定一覧」を出す。
+// 　　そこで、空いている設定（または自分にとっていらない不要な設定）を選択して
+// 　　[設定変更] ボタンを押して「タイプ別設定」を出す。
+// 　　そこで以下のように設定する。設定後、[OK]ボタンを押して「タイプ別設定」を
+// 　　閉じて設定終了。
+//
+// 　　[スクリーン]
+// 　　　　設定の名前                   [Hot Soup Processor]
+// 　　　　ファイル拡張子               [as]
+// 　　　　スマートインデント           [なし]
+// 　　　　その他のインデント対象文字   [    ]          # 空欄
+// 　　　　アウトライン解析方法
+// 　　　　└ ルールファイル            [～～\HSP.RL ]  # 同梱の HSP.RL を指定
+//
+// 　　　　※ ルールファイル
+// 　　　　　 　　編集中に [F11] を押した時の解析画面の解析ルールを指定する
+// 　　　　　 　　ファイルです。
+//
+// 　　[カラー]
+// 　　　　強調キーワード1      [Hot Soup Processor]
+// 　　　　コメントスタイル
+// 　　　　├ ブロック型        [  ]～[  ]              # 空欄
+// 　　　　├ ブロック型        [  ]～[  ]              # 空欄
+// 　　　　├ 行型              [;   ]                  # セミコロン１文字
+// 　　　　├ 行型              [    ]                  # 空欄
+// 　　　　└ 行型              [    ]                  # 空欄
+// 　　　　エスケープ           [C言語風: "\""]
+//
+// 　　[支援]
+// 　　　　入力補完機能
+// 　　　　├ 単語ファイル      [～～\HSP.KWD ]     # このファイルを指定する。
+// 　　　　└ [レ] 英大文字小文字を同一視する(I)    # チェックする
+// 　　　　キーワードヘルプ機能
+// 　　　　├ [レ] キーワードヘルプ機能を使う(K)	# チェックする
+// 　　　　└ 辞書ファイル		[～～\HSP.KHP]		# 同梱の HSP.KHP を指定
+//
+// 　　　　※ 入力補完機能
+// 　　　　　 　　単語を途中まで入力した状態で [Ctrl]+[  ](スペース)操作時の
+// 　　　　　 　　機能です。
+// 　　　　※ キーワードヘルプ機能
+// 　　　　　 　　単語を範囲選択した場合や入力補完機能時に登場する説明文です。
+//
+// 以上で基本的な設定は終了です。
+// 他、配色など、色々自分の好みで設定してみてください。
+// ************************************************************************* //
+
+// ローカルラベル
+@back
+@forward
+@b
+@f
+
+// システム変数
+system
+hspstat
+hspver
+cnt
+err
+stat
+dispx
+dispy
+paluse
+mousex
+mousey
+rval
+gval
+bval
+cmdline
+winx
+winy
+strsize
+csrx
+csry
+windir
+curdir
+exedir
+refstr
+prmx
+prmy
+looplev
+sublev
+wparam
+lparam
+iparam
+
+// オブジェクト制御命令
+button
+chkbox
+clrobj
+combox
+input
+listbox
+mesbox
+objmode
+objprm
+objsel
+objsend
+objsize
+
+// ファイル操作命令
+bcopy
+bload
+bsave
+chdir
+delete
+dirlist
+exist
+mkdir
+
+// プリプロセッサ命令
+#deffunc
+#define
+#fpbit
+#func
+#global
+#include
+#module
+#uselib
+
+// プログラム制御命令
+await
+break
+continue
+end
+exec
+gosub
+goto
+if
+else
+loop
+onclick
+onexit
+onkey
+repeat
+return
+run
+skiperr
+stop
+wait
+
+// マルチメディア制御命令
+mci
+snd
+sndload
+sndoff
+
+// メモリ管理命令
+alloc
+dim
+memcpy
+memset
+peek
+poke
+sdim
+wpeek
+wpoke
+
+// 画面制御命令
+bgscr
+bmpsave
+boxf
+buffer
+chgdisp
+color
+font
+gcopy
+getpal
+gmode
+gsel
+gzoom
+line
+palcolor
+palcopy
+palette
+palfade
+pget
+picload
+pos
+pset
+redraw
+screen
+sysfont
+width
+
+// 基本入出力制御命令
+cls
+dialog
+getkey
+gettime
+ginfo
+logmes
+logmode
+mes
+mouse
+print
+randomize
+rnd
+stick
+text
+title
+
+// 代入命令
+int
+str
+val
+
+// 特殊代入命令
+dup
+mref
+
+// 文字列操作命令
+getstr
+instr
+noteadd
+notedel
+noteget
+notemax
+notesel
+strlen
+strmid
+
+// **************************************************
+// 拡張プラグイン [hgimg]が必要
+
+// 拡張画面制御命令[hgimg]
+addbg
+addbox
+addmesh
+addplate
+addspr
+cammode
+clscolor
+clstex
+copybuf
+delobj
+evmodel
+f2i
+f2str
+fadd
+fcmp
+fcos
+fdiv
+findobj
+fmul
+fprt
+froti
+fsin
+fsqr
+fsub
+fv2str
+fvadd
+fvdir
+fvdiv
+fvface
+fvinner
+fvmax
+fvmin
+fvmul
+fvouter
+fvset
+fvseti
+fvsub
+fvunit
+getbg
+getcoli
+getdebug
+getmtex
+getnode
+getsync
+gettex
+hgbye
+hgdraw
+hgdst
+hggetreq
+hgini
+hgsetreq
+hgsync
+mxaconv
+mxconv
+mxgetname
+mxgetpoly
+mxload
+mxsend
+nextobj
+objact
+objadd1
+objadd2
+objadd3
+objaddf1
+objaddf2
+objaddf3
+objaddfv
+objcheck
+objgetfv
+objgetstr
+objgetv
+objmov1
+objmov2
+objmov3
+objmovf1
+objmovf2
+objmovf3
+objmovfv
+objmovmode
+objmovopt
+objset1
+objset2
+objset3
+objsetf1
+objsetf2
+objsetf3
+objsetfv
+objsetv
+regobj
+selang
+selcam
+selcang
+selcint
+selcpos
+seldir
+selmoc
+selpos
+selscale
+setbg
+setborder
+setcoli
+setfont
+setmap
+setmode
+setmtex
+setobjm
+setobjmode
+setsizef
+settex
+settimer
+setuv
+str2f
+str2fv
+sync
+texload
+texloadbg
+uvanim
+
+// **************************************************
+// 拡張プラグイン [hspda]が必要
+
+// 拡張入出力制御命令[hspda]
+csvnote
+csvstr
+sortget
+sortnote
+sortstr
+sortval
+xnoteadd
+xnotesel
+
+// **************************************************
+// 拡張プラグイン [hspdx]が必要
+
+// 拡張画面制御命令[hspdx]
+es_adir
+es_aim
+es_ang
+es_apos
+es_area
+es_boxf
+es_buffer
+es_bye
+es_caps
+es_check
+es_chr
+es_clear
+es_cls
+es_copy
+es_draw
+es_fill
+es_find
+es_flag
+es_fmes
+es_get
+es_getbuf
+es_getfps
+es_ini
+es_kill
+es_link
+es_mes
+es_new
+es_offset
+es_opt
+es_palfade
+es_palset
+es_pat
+es_pos
+es_put
+es_release
+es_screen
+es_set
+es_size
+es_sync
+es_timer
+es_type
+es_window
+es_xfer
+es_zoom
+
+// **************************************************
+// 拡張プラグイン [hspext]が必要
+
+// OSシステム制御命令[hspext]
+aplact
+apledit
+aplfocus
+aplget
+aplkey
+aplkeyd
+aplkeyu
+aplobj
+aplsel
+aplstr
+clipget
+clipset
+clipsetg
+getreg
+regkey
+regkill
+reglist
+setreg
+sysexit
+sysinfo
+
+// 拡張ファイル操作命令[hspext]
+fxaget
+fxaset
+fxcopy
+fxdir
+fxinfo
+fxlink
+fxren
+fxshort
+fxtget
+fxtset
+lzcopy
+lzdist
+selfolder
+
+// 拡張画面制御命令[hspext]
+gfcopy
+gfdec
+gfinc
+gfini
+hsvcolor
+
+// 拡張入出力制御命令[hspext]
+ematan
+emath
+emcnv
+emcos
+emint
+emsin
+emsqr
+emstr
+pipeexec
+pipeget
+pipeput
+
+// 通信制御命令[hspext]
+comclose
+comget
+comgetc
+comopen
+comput
+computc
+
+// **************************************************
+// 拡張プラグイン [hspsock]が必要
+
+// 通信制御命令[hspsock]
+ipget
+sockcheck
+sockclose
+sockget
+sockgetb
+sockgetc
+sockmake
+sockopen
+sockput
+sockputb
+sockputc
+sockwait
+
+// **************************************************
+// 拡張プラグイン [loadlib]が必要
+verinfo
+winver
+
+// OSシステム制御命令[loadlib]
+sendmsg
+ss_chgpwd
+ss_chkpwd
+ss_running
+_makewnd
+
+// オブジェクト制御命令[loadlib]
+btnimg
+getobjsize
+listadd
+listaddcl
+listdel
+listdelcl
+listget
+listhit
+listicon
+listmax
+listsel
+listview
+msgdlg
+multiopen
+objgray
+progrng
+progset
+resizeobj
+sel_listview
+sel_progbox
+sel_treebox
+strtoint
+tooltip
+treeadd
+treebox
+treedel
+treeget
+treehit
+treeicon
+treemax
+treesel
+treesort
+_clrobj
+_cls
+_objsel
+
+// ファイル操作命令[loadlib]
+ll_bin
+ll_call
+ll_callfnv
+ll_callfunc
+ll_dll
+ll_free
+ll_func
+ll_getproc
+ll_getptr
+ll_libfree
+ll_libload
+ll_n
+ll_p
+ll_peek
+ll_peek1
+ll_peek2
+ll_peek4
+ll_poke
+ll_poke1
+ll_poke2
+ll_poke4
+ll_ret
+ll_retset
+ll_s
+ll_str
+ll_type
+ll_z
+
+// メモリ管理命令[loadlib]
+getptr
+
+// 拡張入出力制御命令[loadlib]
+about
+dd_reject
+dllproc
+draw_icon
+get_fileicon
+get_icon
+imeinit
+imeopen
+imesend
+imestr
+keybd_event
+linesel
+mouse_event
+progbox
+p_scrwnd
+p_wndscr
+selget
+
+// 文字列操作命令[loadlib]
+charlower
+charupper
+from_uni
+to_uni
+
+// 命令概要[loadlib]
+console
+console_color
+console_end
+console_pos
+dd_accept
+gets
+puts
+sel_trackbox
+sel_udbtn
+trackbox
+trackmrk
+trackpos
+trackrng
+tracksel
+udbtn
+udget
+udset
+
+// --------------------------------------------------
+//	履歴です。
+//	
+//	2000/09/09	公開初版
+//
+//	2000/11/05	公開
+//		・@ が強調されるようになる(らしい)ので、泣き言の注釈を削除した。
+//		  また、back → @back / forward → @forward / b → @b / f → @f
+//		  のみにした。
+//
+//	2002/01/02	公開
+//		・HSP 2.55 の HTMLヘルプより抜粋して作り直した
+//
+//	2002/07/10
+//		・ファイル先頭の注釈部分を「設定手順」に変更した。
+//		・ルールファイルを同梱。
+//		　このファイルの定義内容は変わっていません。
+//
+// ende.

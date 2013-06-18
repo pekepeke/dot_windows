@@ -1,0 +1,144 @@
+□	XML+XHTML/JS/CSS統合アウトライン解析
+	Copyright(C) 2003-2010 Moca
+	ver 0.3.2
+
+■説明
+	XML解析アウトラインに、JavaScript関数一覧とCSSをくっつけます。
+	HTML文書構造的なものと基本的なXMLであれば標準搭載のHTMLアウトラインの
+	ほうが高速です。
+	　また名前が示すように、クライアントで表示するものを対象にしています。
+	jsp/phpなどの混在解析には対応しません。
+
+	weboutline.min.js は試験的に Google Closure Compiler で小さくしてあります。
+	http://closure-compiler.appspot.com/home
+	simple でないとEditor/Outline等の関数も短くされて使えなくなります。
+	
+	StaticWebOutline.ini で設定変更できます。
+	各値は、plugin.defの[Option]を見てください。
+
+	XML解析は表示に関するオプションを指定できます。
+	js内 var solXml_Option = "XmlEle2/ewpatiBjc";
+	iniが優先されます。iniを読み込まない設定の場合はsolXml_Optionが適用されます。
+	また、解析中のファイルの途中のコメントで<!-- sol-opt:XmlEle2/オプション -->
+	と指定すると、その場所以降の解析オプションを変更できます。
+	ただしxml宣言より前にはコメントが置けないので置くとエラーになります。
+
+	  小文字がtrue 大文字がfalseです
+	e / E エラーを表示する。表示しない場合でもエラーの所までしか解析しません
+	w / W 警告を表示する。警告は表示に関係なく処理が続行されます
+	p / P XML処理命令(例：<?xsl ?>)を表示する。<?php ?>も対象
+	a / A 属性を表示する<element att="xxx"> の att="xxx"の部分です。
+	t / T 要素の後ろに継続しているテキストを表示する改行までのうち、いくらかを表示します。
+	i / I HTMLモードで大文字小文字を同一視する
+	b / B <>をツリーに追加する(デフォルトB/iniではフラグが反対)
+	j / J Jsアウトラインを実行する
+	c / C Cssアウトラインを実行する
+
+	例： オプション # 対象データ => アウトライン表示
+		atb # <node att="value">text => node att="value" text
+		Atb # <node att="value">text => node text
+		aTb # <node att="value">text => node att=value"
+		atB # <node att="value">text => <node att=value">text
+		AtB # <node att="value">text => <node att=value">
+		ATB # <node att="value">text => <node>
+	タグを眺めたいときのお勧め：EWPaTbJC でアウトラインをコピー&ペースト
+	ただし、あまり長いタグは>がついていても中で切れています。
+
+	js内 xml_OutlineExec の mode_opt では以下を指定できます。
+	StaticWebOutline.ini での指定は OutlineWebXmlMode です。
+		0:ドキュメント依存
+		1:XML(遷移なし)
+		2:XML(XHTML検出)
+		3:XHTML-mode(遷移なし)
+		4:XHTML/HTML-mixMode HTML救済モードですがxhtml名前空間が宣言されるとXHTML-mode(3)になります
+		6:HTML-recovery-mode(遷移なし)
+		5,7:予約
+	内部での自動認識は以下の通りです。
+		0     <?xml → 2          XML宣言。xml系と認識
+		0     <!doctype →  6     doctypeが大文字でない場合 HTML
+		0     <!DOCTYPE html → 4 htmlが宣言されたHTML/xhtml
+		2     <!DOCTYPE html → 3 xml系でhtml宣言されたので xhtml
+		0     <!DOCTYPE HTML → 6 HTMLが小文字でないなら HTML
+		0,2,4 ルート要素に xmlns="http://www.w3.org/1999/xhtml" →3 xhtml名前空間なのでxhtml
+
+■XML/XHTML一覧
+function xml_OutlineExec(nDepth, first_line, end_line, first_colm, end_colm, mode_opt)
+	XMLツリー解析
+	solXml.js from XMLアウトライン解析用DLL for サクラエディタ
+	  solXml.cpp をJScriptに書き直したものです。
+		要素のタグ内の文字だけ拾ってツリーにする
+			エラーがあるときはそこまでの解析結果とエラーを表示する
+			DTD/文字参照類のチェックはなにもしない
+	@ver 0.4
+	
+	0.1 初版: Cをほぼそのまま移植
+	0.2 :JScript向け最適化(charAt == 'x' -> charCodeAt == 0x78など)
+	0.2+:これに以下の機能を追加
+		・jsとcssアウトライン呼び出し
+		・ドキュメント解析モードおよび自動認識(mode_opt)
+		・HTML救済機能
+			htmlの空要素(empty elements/void elements)の場合、<br>でも終了タグがあるかのように振舞う
+			HTMLモードで大文字小文字の同一視(オプションによる)
+	0.3 :google javascript closure向けにサブ関数を関数内に置いた
+	0.4 :桁対応
+	
+	@param nDepth     今のところ無視している
+	@param first_line 解析対象の先頭行(1開始)
+	@param last_line  解析対象の最終行(1開始)
+	@param begin_colm 先頭行の解析開始桁位置(0開始)
+	@param end_colm   最終行の解析終了桁位置(0開始) + 1
+	@return boolean 常にtrueをかえす
+
+■JavaScript一覧
+function js_OutlineExec(nDepth, first_line, last_line, begin_colm, end_colm);
+	JavaScript関数一覧アウトライン解析 Lv.2 for サクラエディタ プラグイン
+	Copyright(C) 2010 Moca All Rights Reserved.
+		オプション：OutLineJSc カーソル位置をfunctionのfにする/直後の文字にする
+	@ver 0.3
+	
+	0.1 :初版
+	0.2 :begin_colm/end_colm対応/カーソル位置オプション追加
+	0.3 :関数名見出しの左側の文字列を{};までに制限
+	
+	@param nDepth     ルートの階層(0で最上)
+	@param first_line 解析対象の先頭行(1開始)
+	@param last_line  解析対象の最終行(1開始)
+	@param begin_colm 先頭行の解析開始桁位置(0開始)
+	@param end_colm   最終行の解析終了桁位置(0開始) + 1
+	@note
+		コメント,文字列,正規表現対応,Tree表示
+		Lv.2では関数のネスト状態を認識してツリー表示します
+		Function()/eval()組み込み関数による関数定義は表示しません。
+		FIXME:JavaScriptを1行で定義した場合、ネスト表示がおかしい場合があります。
+	@return boolean 常にtrueをかえす
+
+■CSS一覧
+function css_OutlineExec(nDepth, first_line, last_line, begin_colm, end_colm);
+	CSS一覧 for サクラエディタ プラグイン
+	Copyright(C) 2010 Moca All Rights Reserved.
+		{がある行をリストアップします。
+		コメントアウト対応
+	@ver 0.2 
+	
+	0.1 :初版 
+	0.2 :begin_colm/end_colm対応
+	
+	@param  nDepth     ルートの階層(0で最上).CSSはnDepthの階層にしか追加しません
+	@param  first_line 解析対象の先頭行(1開始)
+	@param  last_line  解析対象の最終行(1開始)
+	@param  begin_colm 先頭行の解析開始桁位置(0開始)
+	@param  end_colm   最終行の解析終了桁位置(0開始) + 1
+	@return boolean    常にtrueをかえす
+
+■履歴
+	各OutlineExecのバージョンとこのバージョンは連動していません
+	0.1 : 初版: solXml.js 0.2+HTML対応 / js2outline.js 0.1 /cssoutline.js 0.1
+		solXml.js 0.2 未公開
+		js2outline.js 0.1 未公開
+		cssoutline.js 0.1 未公開
+	0.2 : htmlのatt=valの時の警告表示が不正だったのを修正、その他エラー系の表示を修正
+	0.3 : xml 0.4 js 0.2 css 0.2
+		桁表示/StaticWebOutline.ini 設定対応
+	0.3.2 : plugin.defのファイル名指定を修正(minしか添付してないのに標準版になっていた)
+		js 0.3 見出し改良
+	0.3.3 : plugin.defの設定画面をSel対応に変更

@@ -1,0 +1,7 @@
+#拡張子 ExecCommand引数	コマンド１..
+java	1	"%JDK\bin\javac.exe" "$F"	IF EXIST $g.class "%JDK\bin\java.exe" -classpath ".;%JDK\lib;%JDK\jre\lib" "$g"	IF EXIST $g.class del /f $g.class
+vbs	1	CScript "$F"
+js	1	CScript "$F"
+bat	0	cmd.exe /k "$F"
+#sql	1	sqlplus sst1/sst1@xe @"$F"
+ttl	"C:\Program Files\teraterm\ttpmacro.exe" "$F"

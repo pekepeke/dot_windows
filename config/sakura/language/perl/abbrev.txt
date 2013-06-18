@@ -1,0 +1,365 @@
+// Perl キーワード$ARGV
+$_
+$1
+$2
+$3
+$4
+$5
+$6
+$7
+$8
+$9
+$0
+$MATCH
+$&
+$PREMATCH
+$`
+$POSTMATCH
+$'
+$LAST_PAREN_MATCH
+$+
+$MULTILINE_MATCHING
+$*
+$INPUT_LINE_NUMBER
+$NR
+$.
+$INPUT_RECORD_SEPARATOR
+$RS
+$/
+$OUTPUT_AUTOFLUSH
+$|
+$OUTPUT_FIELD_SEPARATOR
+$OFS
+$,
+$OUTPUT_RECORD_SEPARATOR
+$ORS
+$\
+$LIST_SEPARATOR
+$"
+$SUBSCRIPT_SEPARATOR
+$SUBSEP
+$;
+$OFMT
+$#
+$FORMAT_PAGE_NUMBER
+$%
+$FORMAT_LINES_PER_PAGE
+$=
+$FORMAT_LINES_LEFT
+$-
+$FORMAT_NAME
+$~
+$FORMAT_TOP_NAME
+$^
+$FORMAT_LINE_BREAK_CHARACTERS
+$:
+$FORMAT_FORMFEED
+$^L
+$ACCUMULATOR
+$^A
+$CHILD_ERROR
+$?
+$OS_ERROR
+$ERRNO
+$!
+$EVAL_ERROR
+$@
+$PROCESS_ID
+$PID
+$$
+$REAL_USER_ID
+$UID
+$<
+$EFFECTIVE_USER_ID
+$EUID
+$>
+$REAL_GROUP_ID
+$GID
+$(
+$EFFECTIVE_GROUP_ID
+$EGID
+$)
+$PROGRAM_NAME
+$0
+$[
+$PERL_VERSION
+$]
+$DEBUGGING
+$^D
+$SYSTEM_FD_MAX
+$^F
+$INPLACE_EDIT
+$^I
+$PERLDB
+$^P
+$BASETIME
+$^T
+$WARNING
+$^W
+$EXECUTABLE_NAME
+$^X
+$ARGV
+$ENV
+$SIG
+// perl sentence
+break
+continue
+do
+elsif
+else
+for
+foreach
+goto
+if
+last
+next
+return
+sub
+undef
+unless
+until
+while
+// perl functions
+abs
+accept
+alarm
+atan2
+bind
+binmode
+bless
+caller
+chdir
+chmod
+chomp
+chop
+chown
+chr
+chroot
+close
+closedir
+connect
+continue
+cos
+crypt
+dbmclose
+dbmopen
+defined
+delete
+die
+do
+dump
+each
+eof
+eval
+exec
+exists
+exit
+exp
+fcntl
+fileno
+flock
+fork
+format
+formline
+getc
+getlogin
+getpeername
+getpgrp
+getppid
+getpriority
+getpwnam
+getgrnam
+gethostbyname
+getnetbyname
+getprotobyname
+getpwuid
+getgrgid
+getservbyname
+gethostbyaddr
+getnetbyaddr
+getprotobynumber
+getservbyport
+getpwent
+getgrent
+gethostent
+getnetent
+getprotoent
+getservent
+setpwent
+setgrent
+sethostent
+setnetent
+setprotoent
+setservent
+endpwent
+endgrent
+endhostent
+endnetent
+endprotoent
+endservent
+getsockname
+getsockopt
+glob
+gmtime
+goto
+grep
+hex
+import
+index
+int
+ioctl
+join
+keys
+kill
+last
+lc
+lcfirst
+length
+link
+listen
+local
+localtime
+log
+lstat
+map
+mkdir
+msgctl
+msgget
+msgsnd
+msgrcv
+my
+next
+no
+oct
+open
+opendir
+ord
+pack
+package
+pipe
+pop
+pos
+print
+printf
+prototype
+push
+qq
+qr
+qx
+qw
+quotemeta
+rand
+read
+readdir
+readline
+readlink
+readpipe
+recv
+redo
+ref
+rename
+require
+reset
+return
+reverse
+rewinddir
+rindex
+rmdir
+scalar
+seek
+seekdir
+select
+semctl
+semget
+semop
+send
+setpgrp
+setpriority
+setsockopt
+shift
+shmctl
+shmget
+shmread
+shmwrite
+shutdown
+sin
+sleep
+socket
+socketpair
+sort
+splice
+split
+sprintf
+sqrt
+srand
+stat
+study
+sub
+substr
+symlink
+syscall
+sysopen
+sysread
+sysseek
+system
+syswrite
+tell
+telldir
+tie
+tied
+time
+times
+tr
+truncate
+uc
+ucfirst
+umask
+undef
+unlink
+unpack
+untie
+unshift
+use
+utime
+values
+vec
+wait
+waitpid
+wantarray
+warn
+write
+// my memorandum
+my ($sec,$min,$hour,$day,$mon,$year) = localtime(time); $mon++; $year+=1900;
+my ($sec,$min,$hour,$day,$mon,$year) = localtime(time+60*60*24); $mon++; $year+=1900;
+use strict;
+use warnings;
+use Data::Dumper;
+use Carp;print Dumper 
+use constant { hoge => 0, };
+eval{ }; if ($@){ print $@; }
+BEGIN{}
+foreach my $key (keys %hash) {
+while ( my ($key, $value) = each(%hash) ) {
+for (my $i=0 $i <= $#list; $i++) {
+foreach my $item (@list) {
+open $IN, '<', $path or die "cannot open $path : $!";
+open $OUT, '>', $path or die "cannot open $path : $!";
+while (my $line = <IN>) {
+DBI->connect("DBI:mysql:database=hoge:host=127.0.0.1;port=3306","root","root");DBI->connect("DBI:ODBC:dns_name","root","root", {LongTruncOk=>1, LongReadLen=>2048} );use strict;use warnings;use Data::Dumper;
+use YAML();
+sub p (@) { local $Data::Dumper::Indent = 1; print Dumper(@_) }
+sub P (@) { print YAML::Dump(@_)   }
+use Perl6::Say;
+use Path::Class;
+use Benchmark ':all'; cmpthese(timethese(10000, { 'name' => sub {} }));
+use utf8;
+binmode STDIN,  ":utf8";
+binmode STDOUT, ":utf8";
+open($fh, "<:utf8", $filename)open($fh, "<:encoding(shiftjis)", $filename);
+use base qw(Class:Accessor::Fast);
+__PACKAGE__->mk_accessors( qw() );
+use base qw(Exporter);
+our @EXPORT = qw( );
+our @EXPORT_OK = qw( );
+new {my $class = shift;bless {},$class;}
+POSIX::strftime("%Y/%m/%d %H:%M:%S", localtime);

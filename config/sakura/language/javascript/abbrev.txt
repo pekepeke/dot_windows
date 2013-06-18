@@ -1,0 +1,469 @@
+Array
+Boolean
+CollectGarbage
+Date
+E
+Enumerator
+Function
+GetObject
+Infinity
+LN10
+LN2
+LOG10E
+LOG2E
+MAX_VALUE
+MIN_VALUE
+Math
+NEGATIVE_INFINITY
+NaN
+Number
+Object
+PI
+POSITIVE_INFINITY
+RegExp
+SQRT1_2
+SQRT2
+ScriptEngine
+ScriptEngineBuildVersion
+ScriptEngineMajorVersion
+ScriptEngineMinorVersion
+String
+UTC
+VBArray
+abs
+abstract
+acos
+anchor
+apply
+arguments
+asin
+atEnd
+atan
+atan2
+big
+blink
+bold
+boolean
+break
+byte
+call
+callee
+caller
+case
+catch
+ceil
+char
+charAt
+charCodeAt
+class
+compile
+concat
+const
+constructor
+continue
+cos
+debugger
+decodeURI
+decodeURIComponent
+default
+delete
+description
+dimensions
+do
+double
+else
+encodeURI
+encodeURIComponent
+enum
+escape
+eval
+exec
+exp
+export
+extends
+false
+final
+finally
+fixed
+float
+floor
+fontcolor
+fontsize
+for
+fromCharCode
+function
+getDate
+getDay
+getFullYear
+getHours
+getItem
+getMilliseconds
+getMinutes
+getMonth
+getSeconds
+getTime
+getTimezoneOffset
+getUTCDate
+getUTCDay
+getUTCFullYear
+getUTCHours
+getUTCMilliseconds
+getUTCMinutes
+getUTCMonth
+getUTCSeconds
+getVarDate
+global
+goto
+hasOwnProperty
+if
+ignoreCase
+implements
+import
+in
+index
+indexOf
+input
+instanceof
+int
+interface
+isFinite
+isNaN
+isPrototypeOf
+italics
+item
+join
+lastIndex
+lastIndexOf
+lastMatch
+lastParen
+lbound
+leftContext
+length
+link
+localeCompare
+log
+long
+match
+max
+message
+min
+moveFirst
+moveNext
+multiline
+name
+native
+new
+null
+number
+package
+parse
+parseFloat
+parseInt
+pop
+pow
+private
+propertyIsEnumerable
+protected
+prototype
+public
+push
+random
+replace
+return
+reverse
+rightContext
+round
+search
+setDate
+setFullYear
+setHours
+setMilliseconds
+setMinutes
+setMonth
+setSeconds
+setTime
+setUTCDate
+setUTCFullYear
+setUTCHours
+setUTCMilliseconds
+setUTCMinutes
+setUTCMonth
+setUTCSeconds
+shift
+short
+sin
+slice
+small
+sort
+source
+splice
+split
+sqrt
+static
+strike
+sub
+substr
+substring
+sup
+super
+switch
+synchronized
+tan
+test
+this
+throw
+throws
+toArray
+toDateString
+toExponential
+toFixed
+toLocaleDateString
+toLocaleLowerCase
+toLocaleString
+toLocaleTimeString
+toLocaleUpperCase
+toLowerCase
+toPrecision
+toString
+toTimeString
+toUTCString
+toUpperCase
+transient
+true
+try
+typeof
+ubound
+undefined
+unescape
+unshift
+valueOf
+var
+void
+volatile
+while
+with
+
+// Windows Script Host のメソッド
+AddPrinterConnection
+AddWindowsPrinterConnection
+ConnectObject
+Count
+CreateScript
+CreateShortcut
+DisconnectObject
+Echo
+EnumNetworkDrives
+EnumPrinterConnections
+Exec
+Execute
+Exists
+ExpandEnvironmentStrings
+getResource
+LogEvent
+MapNetworkDrive
+Popup
+Quit
+Read
+ReadAll
+ReadLine
+RegDelete
+RegRead
+RegWrite
+Remove
+RemoveNetworkDrive
+RemovePrinterConnection
+Run
+Save
+SendKeys
+SetDefaultPrinter
+ShowUsage
+Skip
+SkipLine
+Sleep
+Terminate
+Write
+WriteBlankLines
+WriteLine
+
+// FileSystemObject のプロパティ
+AtEndOfLine
+AtEndOfStream
+Attributes
+AvailableSpace
+Column
+CompareMode
+Count
+DateCreated
+DateLastAccessed
+DateLastModified
+Drive
+DriveLetter
+Drives
+DriveType
+Files
+FileSystem
+FreeSpace
+IsReady
+IsRootFolder
+Item
+Key
+Line
+Name
+ParentFolder
+Path
+RootFolder
+SerialNumber
+ShareName
+ShortName
+ShortPath
+Size
+SubFolders
+TotalSize
+Type
+VolumeName
+
+// FileSystemObject のメソッド
+Add
+BuildPath
+Close
+Copy
+CopyFile
+CopyFolder
+CreateFolder
+CreateTextFile
+Delete
+DeleteFile
+DeleteFolder
+DriveExists
+Exists
+FileExists
+FolderExists
+GetAbsolutePathName
+GetBaseName
+GetDrive
+GetDriveName
+GetExtensionName
+GetFile
+GetFileName
+GetFileVersion
+GetFolder
+GetParentFolderName
+GetSpecialFolder
+GetTempName
+Items
+Keys
+Move
+MoveFile
+MoveFolder
+OpenAsTextStream
+OpenTextFile
+Read
+ReadAll
+ReadLine
+Remove
+RemoveAll
+Skip
+SkipLine 
+Write
+WriteBlankLines
+WriteLine
+
+// ActiveX
+ActiveXObject
+WScript.Shell
+Scripting.FileSystemObject
+Scripting.Dictionary
+ADODB.Stream
+WScript.Network
+WbemScripting.SWbemLocator
+Excel.Application
+Word.Application
+Access.Application
+InternetExplorer.Application
+
+// コード系
+for (
+for (var i=0; i < .length ;i++){
+for (var i=0, l=ary.length; i<l ; i++){
+for (var iterator = new Enumerator(procs); !iterator.atEnd(); iterator.moveNext() ){ var item = iterator.item();
+for (var key in obj) {
+do {} while (false);
+while (false) {}
+case '': break;
+case 0: break;
+default:
+function $(id) { return document.getElementById(id); }
+function Class(){	this.initialize.apply(this, arguments);}
+throw new Error("error");
+throw new Error(-1, "error");
+try {} catch(e) { }
+try {} catch(e) { alert(e); }
+try {} catch(e) { alert(e.description); }
+try {} catch(e) { throw(e); }
+catch(e) { }
+catch(e) { alert(e); }
+catch(e) { alert(e.description); }
+catch(e) { throw(e); }
+catch(e) { alert(e.type+"\n"+e.description + "["+e.number+"]"); }
+initialize : function(arg){},
+initialize.apply(this, arguments);
+this.initialize.apply(this, arguments);
+apply(this, arguments);
+call(this, args, ...);
+function(){ ... })();
+attachEvent('onclick', func);
+attachEvent('onclick', function(b,f){return function(){ return f.apply(b, arguments) };});
+addEventListener('onclick', func,false);
+addEventListener('onclick', function(b,f){return function(){ return f.apply(b, arguments) };}, false);
+arguments.callee
+arguments.caller.calllee
+if (obj instanceof Array){
+if (typeof(obj) == 'number'){
+if (typeof(obj) == 'string'){
+if (typeof(obj) == 'function'){
+if (typeof(obj) == 'boolean'){
+if (typeof(obj) == 'object'){
+if (typeof(obj) == 'undefined'){
+if ('undefined' == typeof Array.prototype.some) {
+instanceof Array
+typeof obj == 'number'
+typeof obj == 'string'
+typeof obj == 'function'
+typeof obj == 'boolean'
+typeof obj == 'object'
+typeof obj == 'undefined'
+style.ime-mode='auto';
+style.ime-mode='disabled';
+style.ime-mode='inactive';
+style.ime-mode='active';
+style.width = '1px';
+style.height = '1px';
+style.marginLeft = '1px';
+style.fontWeight = 'bold';
+style.border = 'solid 1px';
+style.background = 'yellow';
+style.display = 'none';
+Class = function(){ return function(){ this.initialize.apply(this, arguments); }};
+extend = function(destination, source) { for (var property in source) destination[property] = source[property]; return destination; };
+extend = function(d, s) { for (var m in s) d[m] = s[m]; };
+observe = window.addEventListener ? window.addEventListener : (window.attachEvent ? window.attachEvent : null);
+Math.rand = function(n) { return Math.floor(Math.random() * n); };
+String.prototype.shuffle = function() { var s = this.split(''); for (var i=0, l=s.length; i<l; i++) { var j = Math.floor(Math.random() * l); if (j==i) continue; var t = s[j]; s[j] = s[i]; s[i] = t; } return s.join('');};
+function(){	//}}
+alert = (typeof window == 'undefined' && WScript) ? function(m) {WScript.Echo(m);} : window.alert;
+lpad = function(v, n) { var s=[new Array(n).join('0'), v].join(''); return s.substring(s.length-n); };
+sprintf = function(){var args = arguments, fmt = args[0], i=1; return fmt.replace(/%s/g,function(){ return args[i++]; }); };
+Array.prototype.forEach = Array.prototype.forEach || function(callback,thisObject){ for(var i=0,len=this.length;i<len;i++) callback.call(thisObject,this[i],i,this) };
+Array.prototype.map = Array.prototype.map || function(callback,thisObject){ for(var i=0,res=[],len=this.length;i<len;i++) res[i] = callback.call(thisObject,this[i],i,this); return res;};
+Array.prototype.filter = Array.prototype.filter || function(callback,thisObject){ for(var i=0,res=[],len=this.length;i<len;i++) callback.call(thisObject,this[i],i,this) && res.push(this[i]); return res; };
+Array.prototype.indexOf = Array.prototype.indexOf || function(searchElement,fromIndex){ var i = fromIndex<0 ? this.length+fromIndex : fromIndex || 0; for(;i<this.length;i++) if(searchElement === this[i]) return i; return -1; };
+Array.prototype.lastIndexOf = Array.prototype.lastIndexOf || function(searchElement,fromIndex){ var max = this.length-1; var i = fromIndex < 0 ? Math.max(max+1 + fromIndex,0): fromIndex > max ? max : max-(fromIndex||0) || max;for(;i>=0;i--) if(searchElement === this[i]) return i; return -1;};
+Array.prototype.every = Array.prototype.every || function(callback,thisObject){ for(var i=0,len=this.length;i<len;i++) if(!callback.call(thisObject,this[i],i,this)) return false; return true;};
+Array.prototype.some = Array.prototype.some || function(callback,thisObject){ for(var i=0,len=this.length;i<len;i++) if(callback.call(thisObject,this[i],i,this)) return true; return false;};
+Array.prototype.shuffle = function() { var r = Array.apply(null, this); for (var i=0, l=r.length; i<l ;i++) { var j = Math.floor(Math.random() * l); if (j==i) continue; var tmp = r[j]; r[j] = r[i]; r[i] = tmp; }}
+var $A = function(iterable) { if (!iterable) return []; if (iterable.toArray) { return iterable.toArray(); } else { var results = []; for (var i = 0, length = iterable.length; i < length; i++) results.push(iterable[i]); return results; } }
+Function.prototype.bind = function() { var m = this, args = $A(arguments), object = args.shift(); return function() { return m.apply(object, args.concat($A(arguments))); } }
+Function.prototype.bindAsEventListener = function(object) { var __method = this, args = $A(arguments), object = args.shift(); return function(event) { return __method.apply(object, [( event || window.event)].concat(args).concat($A(arguments))); } }
+Function.prototype.bind = function(obj){ var self = this; return function(){ return self.apply(obj,arguments) }};
+bind(obj, 1...)
+script type="text/javascript" src="http://www.google.com/jsapi">google.load("jquery", "1.3.1");  google.load("jqueryui", "1.5.3");// http://code.google.com/intl/ja/apis/ajaxlibs/documentation/index.html</script>

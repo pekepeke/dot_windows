@@ -1,0 +1,21 @@
+
+use DBI;
+
+my $DBI_CONNECT="DBI:mysql:database=test:host=localhost;port=3306";
+my $DBI_USER="root";
+my $DBI_PWD="root";
+
+my $dbh = DBI->connect( $DBI_CONNECT, $DBI_USER, $DBI_PWD);
+
+my $sql = qq[
+    select user_id, email from user where user_id = ?
+];
+my $sth = $dbh->prepare($sql);
+$sth->execute(3) or die $sth->errstr();
+# fetch(), fetchrow_array()
+while (my $data=$sth->fetchrow_hashref()) {
+	print join(",", $data->{user_id})."\n";
+}
+$sth->finish();
+
+$dbh->disconnect();

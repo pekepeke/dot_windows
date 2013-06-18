@@ -1,0 +1,7 @@
+shiftjis,\n
+# -*- coding:sjis -*-
+
+def main():
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,63 @@
+
+@if (1==1) /*
+@ECHO OFF
+CScript //Nologo //E:JScript "%~f0" %*
+GOTO :EOF
+*/
+@end
+alert = (typeof window == 'undefined' && WScript) ? function(m) {WScript.Echo(m);} : null;
+Array.prototype.forEach = Array.prototype.forEach || function(callback,thisObject){ for(var i=0,len=this.length;i<len;i++) callback.call(thisObject,this[i],i,this) };
+Array.prototype.map = Array.prototype.map || function(callback,thisObject){ for(var i=0,res=[],len=this.length;i<len;i++) res[i] = callback.call(thisObject,this[i],i,this); return res;};
+
+var $F = {
+	fso : new ActiveXObject("Scripting.FileSystemObject"),
+	exist : function(path) { return this.isFile(path) || this.isFolder(path); },
+	isFile : function(path) { return this.fso.FileExists(path); },
+	isFolder : function(path) { return this.fso.FolderExists(path); },
+	_get_enum : function(enum_obj) {
+		var l = [];
+		for (var f = new Enumerator(enum_obj); !f.atEnd(); f.moveNext()) l.push(f.item());
+		return l;
+	},
+	files : function(path) {
+		return this.isFolder(path) ? this._get_enum(this.fso.GetFolder(path).Files) : null;
+	},
+	folders : function(path) {
+		return this.isFolder(path) ? this._get_enum(this.fso.GetFolder(path).SubFolders) : null;
+	},
+	read : function(path) {
+		if (!this.isFile(path)) return '';
+		var stream = this.fso.OpenTextFile(path, 1);//==ForReading
+		var text = stream.atEndOfStream ? stream.ReadAll() : '';
+		stream.close();
+		return text;
+	},
+	write : function(path, text) {
+		var stream = this.fso.CreateTextFile(path, true);
+		stream.Write(text); stream.Close();
+	},
+	cp : function(src, dst) { this.fso.copyFile(src, dst); },
+	rm : function(target) { this.fso.deleteFile(target); },
+	rmdir : function(target) { this.fso.deleteFolder(target); }
+};
+var $S = {
+	sh : new ActiveXObject("WScript.Shell"),
+	cd : function(path) { sh.CurrentDirectory = path || this.scriptDir; },
+	scriptDir : WScript.scriptFullName.replace(/[^\\\/]+$/,''),
+	getenv : function(env) { return sh.Environment("PROCESS").Item(env); },
+	setenv : function(env, val) { sh.Environment("PROCESS").Item(env) = val; },
+	run : function(cmd, win, wait) { this.sh.Run(cmd, win||1, wait||false); },
+	argv : function() { 
+		var args = WScript.Arguments.Unnamed;	// WScript.Arguments;
+		var list = [];
+		for (var i=0, l=args.length; i<l ;i++) list.push(args(i));
+		return list;
+	},
+	opt : function(keys) {
+		var option = {};
+		keys.forEach(function(v){ option[v] = WScript.Arguments.Named.Item(v); });
+		return option
+	},
+	pause : function(m) { this.sh.popup(m||"続行する場合はボタンを押してください"); },
+	choice : function(m) { return this.sh.popup(m ||"選択してください。", -1, "", 4) == 6; }
+};

@@ -1,0 +1,9 @@
+utf8,\n
+    cd hoge
+    for FNAME in $(ls -t *) ; do
+    	cnt=$(($cnt+1))
+    	if [ $cnt -gt $SAVE_CNT ]; then
+    		echo rm -r $FNAME
+    		rm -rf $FNAME
+    	fi
+    done

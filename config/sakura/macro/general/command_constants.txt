@@ -1,0 +1,4 @@
+#command.txt ‚Åg—p‚µ‚½‚¢’è”‚Ì’è‹`
+JDK	C:\bea\jdk142_08
+RDK	c:\Program Files\ruby-1.8\bin
+.NET2	%SYSTEMROOT%\Microsoft.NET\Framework\v2.0.50727

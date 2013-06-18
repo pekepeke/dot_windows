@@ -1,0 +1,17 @@
+;プラグイン定義ファイルv1
+[Plugin]
+Id=net.sourceforge.sakura-editor.plugin.Indent.Python
+Name=Pythonスマートインデント
+Description=Python用のスマートインデント（簡易）を提供します。
+Type=wsh
+Version=1.0
+Url=https://sourceforge.net/projects/sakura-editor/
+Author=syat
+
+[Wsh]
+UseCache=1
+
+[Plug]
+SmartIndent=indent.js
+SmartIndent.Label=Python
+

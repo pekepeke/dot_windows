@@ -1,0 +1,14 @@
+;プラグイン定義ファイルv1
+[Plugin]
+Id=net.sourceforge.sakura-editor.plugin.syat.TextOutlinePlus
+Name=テキストアウトライン解析
+Description=章番号対応のアウトライン解析です。
+Type=wsh
+Version=0.1
+Url=http://sakura.qp.land.to/?Junk%2F48
+Author=syat
+
+[Plug]
+Outline=outline.js
+Outline.Label=Text+
+

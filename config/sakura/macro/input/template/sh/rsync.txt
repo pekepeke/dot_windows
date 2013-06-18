@@ -1,0 +1,13 @@
+
+RSYNC_COMMON_OPT="-rav --exclude .svn"
+
+for SERVER in ${SERVER_LIST} ; do
+	PREFIX=${SERVER}:
+	if [ "$SERVER" == "localhost" ] ; then
+		PREFIX=${SERVER}
+	fi
+	rsync --dry-run ${RSYNC_COMMON_OPT} batch/products/ ${PREFIX}/usr/local/products/
+	echo press return.
+	read
+	rsync ${RSYNC_COMMON_OPT} batch/products/ ${PREFIX}/usr/local/products/
+done

@@ -1,0 +1,4 @@
+arguments.caller.calllee /// 呼び出し元の関数名
+arguments.calllee /// 実行中の関数オブジェクト
+arguments /// 現在実行中の関数に渡された引数郡
+typeof // 型名を返却する \nex.)typeof(arg) \n@return number,string,function,boolean,object,undefined

@@ -1,0 +1,63 @@
+;プラグイン定義ファイルv1
+[Plugin]
+Id=net.sf.users.moca_skr.plugin.StaticWeb.outline
+Name=XML/JS/CSS統合アウトライン解析
+Description=Web用の統合アウトラインを提供します
+Type=wsh
+Version=0.3.3
+Url=http://www.geocities.jp/moca_skr/
+Author=Moca
+
+[Plug]
+Outline=weboutline.min.js
+Outline.Label=XML/HTML+JS+CSS
+
+[Wsh]
+UseCache=1
+
+[Option]
+O[1].Section=Option
+O[1].Key=LoadOption
+O[1].Label=オプションファイルを適用
+O[1].Type=Bool
+O[2].Key=OutLineViewStyle
+O[2].Label=統合XML:ツリービュー切り替え
+O[2].Type=Bool
+O[3].Key=OutLineWebXmlMode
+O[3].Label=統合XML:不明拡張子解析モード
+O[3].Type=Sel
+O[3].Select=自動:0|XML固定:1|XML/XHTML検出:2|XHTML固定:3|HTML固定:6
+O[4].Key=OutLineCSSViewStyle
+O[4].Label=CSS:ツリービュー切り替え
+O[4].Type=Bool
+O[5].Key=OutLineXMLe
+O[5].Label=XML:e エラーを表示
+O[5].Type=Bool
+O[6].Key=OutLineXMLw
+O[6].Label=XML:w 警告を表示
+O[6].Type=Bool
+O[7].Key=OutLineXMLp
+O[7].Label=XML:p XML-PI(例：<?xsl ?>)を表示
+O[7].Type=Bool
+O[8].Key=OutLineXMLa
+O[8].Label=XML:a 属性を表示
+O[8].Type=Bool
+O[9].Key=OutLineXMLt
+O[9].Label=XML:t 要素の後ろに継続しているテキストを表示
+O[9].Type=Bool
+O[10].Key=OutLineXMLi
+O[10].Label=XML:i HTMLモードで大文字小文字を同一視
+O[10].Type=Bool
+O[11].Key=OutLineXMLB
+O[11].Label=XML:B <>をツリーから削除
+O[11].Type=Bool
+O[12].Key=OutLineXMLj
+O[12].Label=XML:j Script属性でJsアウトラインを実行
+O[12].Type=Bool
+O[13].Key=OutLineXMLc
+O[13].Label=XML:c style属性でCssアウトラインを実行
+O[13].Type=Bool
+O[14].Key=OutLineJSc
+O[14].Label=JS:c カーソル位置はfunctionのf(FALSEで後ろ)
+O[14].Type=Bool
+

@@ -1,0 +1,8 @@
+;[.extension;
+;MenuText|CommandLine|WorkingDirectory|nShow
+;]
+
+[.***;
+ShellExecute|"%P"
+]
+

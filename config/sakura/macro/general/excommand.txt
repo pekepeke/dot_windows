@@ -1,0 +1,52 @@
+# 名称	拡張子	Exec引数	コマンド１..
+# Exec引数=0 の場合、WScript.Shell の Run で実行します。
+#
+# 拡張変数
+# 
+# ?...   実行時にコマンドを指定(... の部分はデフォルト文字列) ※?はコマンドラインの先頭に指定すること
+# %s:    sakura editor EXE配置ディレクトリ
+# %d:    オープンしているファイルのディレクトリ
+# %c:    COMSPEC 環境変数
+# %xxx:  command_constants.txt に定義された値
+# 
+# 上記以外は サクラエディタのExpandParameterのヘルプの書式が使用できます。
+
+# common
+コマンドヘルプ参照用	*	1	?dir /?
+Notepad++起動	*	0	"%s\..\notepad++\notepad++.exe" "$F"
+PowerShell起動	*	0	"%SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe"
+メニュー編集	*	0	"$S" "%m\excommand.txt"
+js prompt起動	*	"%s\bin\jssh.js"
+
+# java
+JAVAコンパイル	java,jav,jad	1	?"%JDK\bin\javac.exe" "$F"	IF EXIST $g.class "%JDK\bin\java.exe" -classpath ".;%JDK\lib;%JDK\jre\lib" "$g"
+JAVA実行	java,jav,jad	1	?"%JDK\bin\java.exe" -classpath ".;%JDK\lib;%JDK\jre\lib" "$g"
+
+# bat
+バッチ実行	bat,cmd	0	cmd.exe /k "$F"
+
+# sql
+sqlplus起動	txt,sql	0	sqlplus sst1/sst1@xe @"$F"
+
+# vbscript,javascript
+WSH実行	vbs,js	1	CScript "$F"
+#bkhvalid起動	js,hta,htm,html,css	"%s\bin\bkhvalid\bkhvalid.exe" "$F"
+javascript文法チェック	js,hta,htm,html	1	"%s\bin\jsl.exe" conf "%s\bin\jsl.conf" -process "$F"
+JSPopコンパイル	js	1	"%s\bin\jspop.exe" "$F"
+JS.NETコンパイル	js	1	?"%.NET2\jsc.exe" "$F"
+
+# C#
+C#.NETコンパイル	cs	1	?"%.NET2\csc.exe" "$F"
+
+# VisualBasic.NET
+VB.NETコンパイル	vb	1	?"%.NET2\vbc.exe" "$F"
+
+# ruby
+ruby console起動	rb	0	cmd /k "cd %d & set PATH=%RDK;%PATH%"
+ruby compile	rb	1	"%RDK\ruby" -c "$F"
+ruby debug	rb	1	"%RDK\ruby" -r debug "$F"
+Exerb	rb	1	set PATH=%RDK;%PATH% & exerb "$f"
+mkexy+Exerb	rb	1	set PATH=%RDK;%PATH% & mkexy "$f" & if exist "$g.exy" exerb "$g.exy"
+
+# ttl
+TeraTermマクロ実行	ttl	1	"C:\Program Files\teraterm\ttpmacro.exe" "$F"

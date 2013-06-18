@@ -1,0 +1,8 @@
+utf8,\n
+
+#!/bin/sh
+
+LOG=a.txt
+function log {
+	echo "[$(date +%Y/%m/%d\ %H\:%M\:%S)] $*" >> ${LOG}
+}
