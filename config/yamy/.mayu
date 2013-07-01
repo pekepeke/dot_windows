@@ -1,0 +1,35 @@
+# Keyboard settings
+include "dot.mayu"
+
+# Mouse event activation
+def option mouse-event = true
+
+
+include "mayu.d\\vimedit.mayu"
+
+# For Cygwin {{{
+window Cygwin /cygwin/ : Global
+  key A-v = RButton # Paste
+
+  # IL: IME on
+  # IC: IME inserting
+
+  key IL-~IC-Esc = $ToggleIME Esc # Make IME off, Exit insert mode
+  key IC-Esc = Esc # Stop inserting, Make IME off, Exit insert mode
+
+  key IL-*IC-C-LeftSquareBracket = Esc $ToggleIME Esc # Stop inserting, Make IME off, Exit insert mode
+# }}}
+window PuTTY /putty/ : Global
+
+keymap Global
+ if ( KBD109 )
+   key *無変換		= &Ignore		# 無変換を IME オフに
+   key IL-*無変換	= $ToggleIME		#	〃
+   key IC-C-K		= F7			# IME で変換中の C-K は F7
+   key *変換		= &Ignore		# 変換を IME オンに
+   key ~IL-*変換	= $ToggleIME		#       〃
+   # if ( YAMY )
+     key *E0無変換	= &Ignore		# 無変換を IME オフに
+     key IL-*E0無変換	= $ToggleIME		#	〃
+   # endif
+ endif
