@@ -4,7 +4,6 @@ include "dot.mayu"
 # Mouse event activation
 def option mouse-event = true
 
-
 include "mayu.d\\vimedit.mayu"
 
 # For Cygwin {{{
@@ -33,3 +32,7 @@ keymap Global
      key IL-*E0無変換	= $ToggleIME		#	〃
    # endif
  endif
+
+# CapsLockをControlに
+mod Control += E0英数
+key *E0英数 = *LControl
