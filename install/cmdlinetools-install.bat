@@ -14,6 +14,9 @@ if exist ..\usr\local\bin (
 	if not exist pigz.exe iewget https://kjkpub.s3.amazonaws.com/software/pigz/2.3/pigz.exe
 	if not exist unpigz.exe iewget https://kjkpub.s3.amazonaws.com/software/pigz/2.3/unpigz.exe
 	if not exist es.exe iewget http://www.voidtools.com/es.exe
+	::if not exist jvgrep.exe (
+	::	iewget https://github.com/mattn/jvgrep/releases/download/v3.5/jvgrep-win32-3.5.tar.gz
+	::)
 ) else (
 	echo dir not found.
 	pause
