@@ -4,8 +4,8 @@ dot_windows
 ## mingw + mintty
 
 ```bash
-mingw-get install mintty
-mingw-get install openssl openssh
+mingw-get install msys-mintty
+mingw-get install msys-openssl msys-openssh
 ```
 
 ### Create shortcut mintty.exe
