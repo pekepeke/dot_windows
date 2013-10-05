@@ -1,0 +1,9 @@
+#!/bin/sh
+
+
+if [ -e "%LOCALAPPDATA%/Google/Chrome/Application/chrome.exe" ];then
+	"%LOCALAPPDATA%/Google/Chrome/Application/chrome.exe" $@
+else
+	"%APPDATA%/Google/Chrome/Application/chrome.exe" $@
+fi
+

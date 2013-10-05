@@ -1,0 +1,11 @@
+#!/bin/sh
+
+CWD=$(pwd)
+
+for f in $HOME/.vim/neobundle/* ; do
+	echo $f
+	cd "$f"
+	git pull
+done
+
+cd "$CWD"

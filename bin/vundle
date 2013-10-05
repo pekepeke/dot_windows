@@ -1,0 +1,15 @@
+#!/bin/sh
+
+CWD=$(pwd)
+
+cd $HOME/.github-dotfiles
+git submodule update --init
+git submodule foreach "git checkout master; git fetch; git pull"
+if [ -e "$HOME/.windows" ]; then
+	cd "$HOME/.windows"
+	git pull
+	git submodule update -init
+fi
+
+start gvim -c "silent NeoBundleInstall" -c "silent NeoBundleInstall!" -c "quitall"
+
