@@ -36,3 +36,70 @@ keymap Global
 # CapsLockをControlに
 mod Control += E0英数
 key *E0英数 = *LControl
+
+keymap Global
+   key W-c = C-c
+   key W-v = C-v
+   key W-x = C-x
+   key W-s = C-s
+   key W-a = C-a
+   key W-t = C-t
+   key W-n = C-n
+   key W-q = A-F4
+   key W-w = C-w
+   key W-f = C-f
+   key W-g = F3
+   key W-S-g = S-F3
+   key W-b = C-b
+   key W-S-*OpenBracket = C-S-Tab
+   key W-S-*CloseBracket = C-Tab
+   key C-a = Home
+   key C-e = End
+   key C-p = Up
+   key C-n = Down
+   key C-f = Right
+   key C-b = Left
+   key C-w = C-BS
+   key C-d = Del
+
+keymap NormalKaymap : Global
+   key W-c = W-c
+   key W-v = W-v
+   key W-x = W-x
+   key W-s = W-s
+   key W-a = W-a
+   key W-t = W-t
+   key W-n = W-n
+   key W-q = W-q
+   key W-w = W-w
+   key W-f = W-f
+   key W-g = W-g
+   key W-S-g = W-S-g
+   key W-b = W-b
+   key W-S-*OpenBracket = W-S-*OpenBracket
+   key W-S-*CloseBracket = W-S-*CloseBracket
+   key C-a = C-a
+   key C-e = C-e
+   key C-p = C-p
+   key C-n = C-n
+   key C-f = C-f
+   key C-b = C-b
+   key C-w = C-w
+   key C-d = C-d
+
+keymap ExKeymap : Global
+   key C-a = C-a
+   key C-e = C-e
+   key C-p = C-p
+   key C-n = C-n
+   key C-f = C-f
+   key C-b = C-b
+   key C-w = C-w
+   key C-d = C-d
+
+window Chrome /chrome.exe/ : Global
+   key C-f = C-f
+   key C-b = C-b
+   key W-f = A-f &Sync &Wait(5) f
+
+window GVim /mintty.exe|putty.exe|console.exe|ttermpro.exe|poderosa.exe|gvim.exe/ : NormalKaymap
