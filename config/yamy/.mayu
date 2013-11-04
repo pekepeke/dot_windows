@@ -38,9 +38,22 @@ mod Control += E0英数
 key *E0英数 = *LControl
 
 keymap Global
+   # exchange alt <-> win
+   mod alt -= LAlt
+   mod alt -= RAlt
+   mod alt += LWin
+   mod alt += RWin
+   key *LAlt = *LWin
+   mod win -= LWin
+   mod win -= RWin
+   mod win += LAlt
+   mod win += RAlt
+   key *LWin = *RAlt
+
    key W-c = C-c
    key W-v = C-v
    key W-x = C-x
+   key W-z = C-z
    key W-s = C-s
    key W-a = C-a
    key W-t = C-t
@@ -66,6 +79,7 @@ keymap NormalKaymap : Global
    key W-c = W-c
    key W-v = W-v
    key W-x = W-x
+   key W-z = W-z
    key W-s = W-s
    key W-a = W-a
    key W-t = W-t
