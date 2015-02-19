@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export PATH=$USERPROFILE/Apps/vim/:$PATH
+gvim "$@"

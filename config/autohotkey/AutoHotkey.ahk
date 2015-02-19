@@ -4,6 +4,7 @@
 
 #include ime_func.ahk
 #include smallemacs.ahk
+#include vk1dsc07bremap.ahk
 
 ;; vi like
 !h::Send, {Left}
