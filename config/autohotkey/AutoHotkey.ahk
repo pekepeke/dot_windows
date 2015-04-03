@@ -2,6 +2,19 @@
 ;Capslock::Ctrl
 ;sc03a::Ctrl
 
+GroupAdd Terminal, ahk_class Putty
+GroupAdd Terminal, ahk_class ConsoleWindowClass ; Cygwin
+GroupAdd Terminal, ahk_class cygwin/x
+GroupAdd Terminal, ahk_class Xming X
+GroupAdd Terminal, ahk_class mintty
+GroupAdd Terminal, ahk_class VirtualConsoleClass ; ConEmu
+
+GroupAdd RawInput, ahk_class Vim
+GroupAdd RawInput, ahk_class Emacs
+GroupAdd RawInput, ahk_class XEmacs
+GroupAdd RawInput, ahk_class MEADOW
+; GroupAdd RawInput, ahk_class SunAwtFrame
+
 #include ime_func.ahk
 #include smallemacs.ahk
 #include vk1dsc07bremap.ahk

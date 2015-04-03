@@ -3,55 +3,70 @@
 #UseHook
 
 AutoHideTooltip(Txt, Time, X="", Y="") {
-  Tooltip, %Txt%, %X%, %Y%
-  SetTimer, AutoHide, -%Time%
-  Return
-  AutoHide:
-    Tooltip, 
-  Return
+	Tooltip, %Txt%, %X%, %Y%
+	SetTimer, AutoHide, -%Time%
+	Return
+	AutoHide:
+		Tooltip, 
+	Return
 }
 
-IsEnabledSmallEmacsSendKey() {
+IsEnabledSESendKey() {
 	global
-	IfWinActive,ahk_class Vim
-		return 0
-	IfWinActive,ahk_class Emacs ;NTEmacs
-		Return 1  
-	IfWinActive,ahk_class XEmacs ;Cygwinè„ÇÃXEmacs
-		Return 1
-	if (is_my_sendkey) {
+	if (WinActive("ahk_group RawInput") || WinActive("ahk_group Terminal") || _IsDisabledSESendKey) {
 		return 0
 	}
 	return 1
 }
-SmallEmacsSendKey(key) {
-	if (IsEnabledSmallEmacsSendKey()) {
+SESendKey(key) {
+	if (IsEnabledSESendKey()) {
+		Send {Blind}%key%
+	} else {
+		Send {Blind}%A_ThisHotkey%
+	}
+	Return
+}
+SENCSendKey(key) {
+	if (IsEnabledSESendKey()) {
+		Send {Ctrl up}
+		Send {Blind}%key%
+	} else {
+		Send {Blind}%A_ThisHotkey%
+	}
+	Return
+}
+SENBSendKey(key) {
+	if (IsEnabledSESendKey()) {
 		Send %key%
 	} else {
-		Send %A_ThisHotkey%
+		Send {Blind}%A_ThisHotkey%
 	}
 	Return
 }
 
-SmallEmacsSendKeyToggle() {
+SESendKeyToggle() {
 	global
-	if (is_my_sendkey) {
-		is_my_sendkey = 0
-		AutoHideTooltip("SmallEmacsSendKey Enable", 3000)
+	if (_IsDisabledSESendKey) {
+		_IsDisabledSESendKey = 0
+		AutoHideTooltip("SESendKey Enable", 3000)
 	} else {
-		is_my_sendkey = 1
-		AutoHideTooltip("SmallEmacsSendKey Disable", 3000)
+		_IsDisabledSESendKey = 1
+		AutoHideTooltip("SESendKey Disable", 3000)
 	}
 	
 }
 
-#!Enter::SmallEmacsSendKeyToggle()
+#!Enter::SESendKeyToggle()
 
-^h::SmallEmacsSendKey("{BS}")
-^m::SmallEmacsSendKey("{Enter}")
+^m::SENCSendKey("{Enter}")
 
-^p::SmallEmacsSendKey("{Up}")
-^n::SmallEmacsSendKey("{Down}")
-^e::SmallEmacsSendKey("{End}")
-^a::SmallEmacsSendKey("{Home}")
+^f::SENCSendKey("{Right}")
+^b::SENCSendKey("{Left}")
+^p::SENCSendKey("{Up}")
+^n::SENCSendKey("{Down}")
+^e::SENCSendKey("{End}")
+^a::SENCSendKey("{Home}")
 
+^h::SENCSendKey("{BS}")
+^w::SESendKey("^{BS}")
+^d::SENCSendKey("{Del}")

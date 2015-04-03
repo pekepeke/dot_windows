@@ -1,4 +1,14 @@
 #!/bin/bash
 
-export PATH=$USERPROFILE/Apps/vim/:$PATH
-gvim "$@"
+if [ -z "$CYGWIN" ]; then
+  export PATH="$USERPROFILE/Apps/vim/:$PATH"
+  gvim "$@" &
+else
+  export PATH="$USERPROFILE/Apps/vim/:$ORIGINAL_PATH"
+  if [ $# -gt 0 ]; then
+    SHELL= VIM= VIMRUNTIME= gvim $(/usr/bin/cygpath -w -a "$@") &
+  else
+    SHELL= VIM= VIMRUNTIME= gvim &
+  fi
+fi
+

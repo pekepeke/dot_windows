@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$CYGWIN" ]; then
+  export PATH="$USERPROFILE/Apps/vim/:$PATH"
+  vim "$@"
+else
+  vim "$@"
+fi
+
