@@ -1,7 +1,9 @@
 #!/bin/sh
 
-if [ -z "$CYGWIN" ]; then
-  start "explorer" "$@"
-else
+if [ -n "$CYGWIN" ]; then
   cygstart "$@"
+elif [ -n "MSYS_PATH" -o -n "$MSYS2_PATH" ]; then
+  start "explorer" $(echo "$@" | sed 's!/!\\!g')
+else
+  start "explorer" "$@"
 fi

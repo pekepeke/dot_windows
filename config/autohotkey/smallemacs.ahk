@@ -26,18 +26,21 @@ SESendKey(key) {
 	}
 	Return
 }
-SENCSendKey(key) {
-	if (IsEnabledSESendKey()) {
-		Send {Ctrl up}
-		Send {Blind}%key%
-	} else {
-		Send {Blind}%A_ThisHotkey%
-	}
-	Return
-}
 SENBSendKey(key) {
 	if (IsEnabledSESendKey()) {
-		Send %key%
+		if (GetKeyState("Shift") == 1) {
+		MsgBox, OK
+		}
+		GetKeyState, state, Shift
+		if (state != "D") GetKeyState, state, Alt
+		if (state != "D") GetKeyState, state, LWin
+		if (state != "D") GetKeyState, state, RWin
+		if (state == "D") {
+			; Send {Blind}%key%
+			Send {Blind}%A_ThisHotkey%
+		} else {
+			Send %key%
+		}
 	} else {
 		Send {Blind}%A_ThisHotkey%
 	}
@@ -58,15 +61,15 @@ SESendKeyToggle() {
 
 #!Enter::SESendKeyToggle()
 
-^m::SENCSendKey("{Enter}")
+^m::SENBSendKey("{Enter}")
 
-^f::SENCSendKey("{Right}")
-^b::SENCSendKey("{Left}")
-^p::SENCSendKey("{Up}")
-^n::SENCSendKey("{Down}")
-^e::SENCSendKey("{End}")
-^a::SENCSendKey("{Home}")
+^f::SENBSendKey("{Right}")
+^b::SENBSendKey("{Left}")
+^p::SENBSendKey("{Up}")
+^n::SENBSendKey("{Down}")
+^e::SENBSendKey("{End}")
+^a::SENBSendKey("{Home}")
 
-^h::SENCSendKey("{BS}")
+^h::SENBSendKey("{BS}")
 ^w::SESendKey("^{BS}")
-^d::SENCSendKey("{Del}")
+^d::SENBSendKey("{Del}")
