@@ -3,7 +3,7 @@
 if [ -n "$CYGWIN" ]; then
   cygstart "$@"
 elif [ -n "MSYS_PATH" -o -n "$MSYS2_PATH" ]; then
-  start "explorer" $(echo "$@" | sed 's!/!\\!g')
+  start "explorer" $(echo "$@" | sed -e 's!^/\(\w\)/!\1:\\!' | sed 's!/!\\!g')
 else
   start "explorer" "$@"
 fi
