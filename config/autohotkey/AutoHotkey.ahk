@@ -9,6 +9,10 @@ GroupAdd Terminal, ahk_class Xming X
 GroupAdd Terminal, ahk_class mintty
 GroupAdd Terminal, ahk_class VirtualConsoleClass ; ConEmu
 
+GroupAdd WebBrowser, ahk_class IEFrame
+GroupAdd WebBrowser, ahk_class MozillaWindowClass
+GroupAdd WebBrowser, ahk_class IEFrame
+
 GroupAdd RawInput, ahk_class Vim
 GroupAdd RawInput, ahk_class Emacs
 GroupAdd RawInput, ahk_class XEmacs

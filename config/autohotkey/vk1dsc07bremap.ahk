@@ -1,5 +1,5 @@
 ; vim: set sw=4 sts=4 ts=4 tw=0 noet ai:
-
+; #InstallKeybdHook
 SendKeyTerminal(nmap, tmaps*) {
 	len := tmaps.MapIndex()
 	if WinActive("ahk_group Terminal") {
@@ -10,6 +10,17 @@ SendKeyTerminal(nmap, tmaps*) {
 		}
 	}
 	Send %nmap%
+}
+SendKeyIfWebBrowser(nmap, tmaps*) {
+	if WinActive("ahk_group WebBrowser") {
+		Send %nmap%
+	}
+	len := tmaps.MapIndex()
+	if (len > 0 && tmaps[0] != "") {
+		k = tmaps[0]
+		Send %k%
+		return
+	}
 }
 
 
@@ -51,13 +62,13 @@ vk1dsc07b & 7::SendKeyTerminal("{Blind}^7")
 vk1dsc07b & 8::SendKeyTerminal("{Blind}^8")
 vk1dsc07b & 9::SendKeyTerminal("{Blind}^9")
 
-vk1dsc07b & r::SendKeyTerminal("{Blind}{F5}")
-vk1dsc07b & g::SendKeyTerminal("{Blind}{F3}")
-vk1dsc07b & q::SendKeyTerminal("{Blind}!{F4}")
+vk1dsc07b & r::SendKeyIfWebBrowser("{Blind}{F5}")
+vk1dsc07b & g::SendKeyIfWebBrowser("{Blind}{F3}")
+vk1dsc07b & q::SendKeyIfWebBrowser("{Blind}!{F4}")
 
 ; how to scape ` and ; ?
-; vk1dsc07b & `::Send ^`
-; vk1dsc07b & ; ::Send ^;
+vk1dsc07b & `;::Send {Blind}^`;
+vk1dsc07b & SC028::Send {Blind}^:
 vk1dsc07b & '::Send {Blind}^'
 vk1dsc07b & ,::Send {Blind}^,
 vk1dsc07b & .::Send {Blind}^.
