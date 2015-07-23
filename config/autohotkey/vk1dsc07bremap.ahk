@@ -1,10 +1,10 @@
 ; vim: set sw=4 sts=4 ts=4 tw=0 noet ai:
 ; #InstallKeybdHook
 SendKeyTerminal(nmap, tmaps*) {
-	len := tmaps.MapIndex()
+	len := tmaps.MaxIndex()
 	if WinActive("ahk_group Terminal") {
-		if (len > 0 && tmaps[0] != "") {
-			k = tmaps[0]
+		if (len > 0 && tmaps[1] != "") {
+			k := tmaps[1]
 			Send %k%
 			return
 		}
@@ -15,9 +15,9 @@ SendKeyIfWebBrowser(nmap, tmaps*) {
 	if WinActive("ahk_group WebBrowser") {
 		Send %nmap%
 	}
-	len := tmaps.MapIndex()
-	if (len > 0 && tmaps[0] != "") {
-		k = tmaps[0]
+	len := tmaps.MaxIndex()
+	if (len > 0 && tmaps[1] != "") {
+		k := tmaps[1]
 		Send %k%
 		return
 	}
@@ -62,9 +62,9 @@ vk1dsc07b & 7::SendKeyTerminal("{Blind}^7")
 vk1dsc07b & 8::SendKeyTerminal("{Blind}^8")
 vk1dsc07b & 9::SendKeyTerminal("{Blind}^9")
 
-vk1dsc07b & r::SendKeyIfWebBrowser("{Blind}{F5}")
-vk1dsc07b & g::SendKeyIfWebBrowser("{Blind}{F3}")
-vk1dsc07b & q::SendKeyIfWebBrowser("{Blind}!{F4}")
+vk1dsc07b & r::SendKeyIfWebBrowser("{Blind}{F5}", "{Blind}^r")
+vk1dsc07b & g::SendKeyIfWebBrowser("{Blind}{F3}", "{Blind}^g")
+vk1dsc07b & q::SendKeyIfWebBrowser("{Blind}!{F4}", "{Blind}^q")
 
 ; how to scape ` and ; ?
 vk1dsc07b & `;::Send {Blind}^`;
@@ -104,19 +104,19 @@ vk1dsc07b & \::SendKeyTerminal("{Blind}^\\")
 ; vk1dsc07b & `;::SendKeyTerminal("{Blind}^`;")
 ; vk1dsc07b & `:::SendKeyTerminal("{Blind}^`:")
 
-vk1dsc07b & Tab::SendKeyTerminal("{Blind}^{Tab}")
-vk1dsc07b & F1::SendKeyTerminal("{Blind}^{F1}")
-vk1dsc07b & F2::SendKeyTerminal("{Blind}^{F2}")
-vk1dsc07b & F3::SendKeyTerminal("{Blind}^{F3}")
-vk1dsc07b & F4::SendKeyTerminal("{Blind}^{F4}")
-vk1dsc07b & F5::SendKeyTerminal("{Blind}^{F5}")
-vk1dsc07b & F6::SendKeyTerminal("{Blind}^{F6}")
-vk1dsc07b & F7::SendKeyTerminal("{Blind}^{F7}")
-vk1dsc07b & F8::SendKeyTerminal("{Blind}^{F8}")
-vk1dsc07b & F9::SendKeyTerminal("{Blind}^{F9}")
-vk1dsc07b & F10::SendKeyTerminal("{Blind}^{F10}")
-vk1dsc07b & F11::SendKeyTerminal("{Blind}^{F11}")
-vk1dsc07b & F12::SendKeyTerminal("{Blind}^{F12}")
+vk1dsc07b & Tab::Send {Blind}^{Tab}"
+vk1dsc07b & F1::Send {Blind}^{F1}
+vk1dsc07b & F2::Send {Blind}^{F2}
+vk1dsc07b & F3::Send {Blind}^{F3}
+vk1dsc07b & F4::Send {Blind}^{F4}
+vk1dsc07b & F5::Send {Blind}^{F5}
+vk1dsc07b & F6::Send {Blind}^{F6}
+vk1dsc07b & F7::Send {Blind}^{F7}
+vk1dsc07b & F8::Send {Blind}^{F8}
+vk1dsc07b & F9::Send {Blind}^{F9}
+vk1dsc07b & F10::Send {Blind}^{F10}
+vk1dsc07b & F11::Send {Blind}^{F11}
+vk1dsc07b & F12::Send {Blind}^{F12}
 
 ; vk1dsc07b & Home::Send +^{Home}
 vk1dsc07b & Home::Send {Blind}^{Home}
