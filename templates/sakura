@@ -1,0 +1,15 @@
+#!/bin/bash
+
+export PATH="~/../Apps/sakura/:$PATH"
+EXEC_BIN="sakura"
+if type cygpath >/dev/null &2>&1; then
+  export PATH="$USERPROFILE/Apps/vim/:$PATH"
+  if [ $# -gt 0 ]; then
+    $EXEC_BIN $(cygpath -w -a "$@") &
+  else
+    $EXEC_BIN &
+  fi
+else
+  export PATH="$USERPROFILE/Apps/vim/:$PATH"
+  $EXEC_BIN "$@" &
+fi

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cwd=$(pwd)
+scriptdir=$(cd "$(dirname $0)"; pwd)
+EXEC_BIN="$scriptdir/rmtrash.CMD"
+cd "$cwd"
+if type cygpath >/dev/null &2>&1; then
+  if [ $# -gt 0 ]; then
+  echo "$EXEC_BIN $(cygpath -w -a "$@")"
+    cmd /c "$(cygpath -w -a $EXEC_BIN) $(cygpath -w -a "$@")" &
+  fi
+else
+  cmd /c "$EXEC_BIN \"$@\"" &
+fi

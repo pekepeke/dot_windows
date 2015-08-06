@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if type cygpath >/dev/null &2>&1; then
+  export PATH="$USERPROFILE/Apps/vim/:$PATH"
+  if [ $# -gt 0 ]; then
+    SHELL= VIM= VIMRUNTIME= gvim --remote $(cygpath -w -a "$@") &
+  else
+    SHELL= VIM= VIMRUNTIME= gvim --remote &
+  fi
+else
+  export PATH="$USERPROFILE/Apps/vim/:$PATH"
+  gvim --remote "$@" &
+fi
