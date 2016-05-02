@@ -1,7 +1,7 @@
 // 指定したフォルダ内の JSマクロランチャー
 (function(){//})
 	var e = Editor;
-	var MACRO_FOLDER = Editor.Expandparameter("$M").replace(/[^\\]+$/g, 'work');
+	var MACRO_FOLDER = e.Expandparameter("$M").replace(/[^\\]+$/g, 'work');
 	var SPC = "\t\t";
 
 	var fso = new ActiveXObject("Scripting.FileSystemObject");
@@ -22,32 +22,44 @@
 	var folder = fso.GetFolder(MACRO_FOLDER);
 	var i = 0, j = 0;
 	
-	try {
-		var popup = new ActiveXObject("EditorHelper.PopUp");
-	} catch (e) {
-		return;
-	}
-	for (var f = new Enumerator(folder.SubFolders) ;!f.atEnd(); f.moveNext() ,j++){
-		popup.CreateSubMenu( fso.GetBaseName( f.item() ) +SPC+"(&"+(String.fromCharCode((j)%26+0x41))+")");
+//	try {
+//		var popup = new ActiveXObject("EditorHelper.PopUp");
+//	} catch (e) {
+//		return;
+//	}
+	var popupMenuStrings = [];
+	var prefix = "";
+	for (var f = new Enumerator(folder.SubFolders) ; !f.atEnd(); f.moveNext() ,j++){
+		popupMenuStrings.push("[S]" + fso.GetBaseName( f.item() ) +SPC+"(&"+(String.fromCharCode((j)%26+0x41))+")");
+		files.push("");
+		// popup.CreateSubMenu( fso.GetBaseName( f.item() ) +SPC+"(&"+(String.fromCharCode((j)%26+0x41))+")");
 		var subfolder = fso.GetFolder( f.item() );
-		for (var it = new Enumerator(subfolder.Files), k=0;!it.atEnd(); it.moveNext() ,k++, i++){
+		prefix = "";
+		for (var it = new Enumerator(subfolder.Files), k=0; !it.atEnd(); it.moveNext() ,k++, i++){
 			files.push(it.item());
-			popup.AddSubMenu( fso.GetBaseName( it.item() ) +SPC+"(&"+(String.fromCharCode((k)%26+0x41))+")", i+1);
+			// popup.AddSubMenu( fso.GetBaseName( it.item() ) +SPC+"(&"+(String.fromCharCode((k)%26+0x41))+")", i+1);
+			if (subfolder.Files.Count <= k + 1) {
+				prefix = "[E]";
+			}
+			popupMenuStrings.push(prefix + fso.GetBaseName( it.item() ) +SPC+"(&"+(String.fromCharCode((k)%26+0x41))+")");
 		}
 	}
 	for (var it = new Enumerator(folder.Files) ;!it.atEnd(); it.moveNext() ,j++, i++){
 		files.push(it.item());
-		popup.AddMenu( fso.GetBaseName( it.item() ) +SPC+"(&"+(String.fromCharCode((j)%26+0x41))+")", i+1);
+		popupMenuStrings.push(fso.GetBaseName( it.item() ) +SPC+"(&"+(String.fromCharCode((j)%26+0x41))+")");
+		// popup.AddMenu( fso.GetBaseName( it.item() ) +SPC+"(&"+(String.fromCharCode((j)%26+0x41))+")", i+1);
 	}
 	if (files.length <= 0) return;
-	
-	var idx = popup.TrackMenu() -1;
-	popup.DeleteMenu();
-	
+	var idx = CreateMenu(1, popupMenuStrings.join(",")) - 1;
+//	var idx = popup.TrackMenu() -1;
+//	popup.DeleteMenu();
+// ErrorMsg(idx);
 	if (idx < 0) return;
 	var macroPath = files[idx];
+	if (macroPath.length <= 0) return;
 	
 	var text = readFile(macroPath);
 	if (!text) return;
 	eval(text);
+
 })();
