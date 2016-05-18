@@ -31,7 +31,7 @@
 	var prefix = "";
 	for (var f = new Enumerator(folder.SubFolders) ; !f.atEnd(); f.moveNext() ,j++){
 		popupMenuStrings.push("[S]" + fso.GetBaseName( f.item() ) +SPC+"(&"+(String.fromCharCode((j)%26+0x41))+")");
-		files.push("");
+		// files.push("");
 		// popup.CreateSubMenu( fso.GetBaseName( f.item() ) +SPC+"(&"+(String.fromCharCode((j)%26+0x41))+")");
 		var subfolder = fso.GetFolder( f.item() );
 		prefix = "";
