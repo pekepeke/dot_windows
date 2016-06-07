@@ -17,6 +17,10 @@ GroupAdd RawInput, ahk_class Vim
 GroupAdd RawInput, ahk_class Emacs
 GroupAdd RawInput, ahk_class XEmacs
 GroupAdd RawInput, ahk_class MEADOW
+GroupAdd VimIDE, ahk_exe PhpStorm64.exe
+GroupAdd VimIDE, ahk_exe PhpStorm32.exe
+; GroupAdd RawInput, ahk_exe PhpStorm64.exe
+; GroupAdd RawInput, ahk_exe PhpStorm32.exe
 ; GroupAdd RawInput, ahk_class SunAwtFrame
 
 #include ime_func.ahk

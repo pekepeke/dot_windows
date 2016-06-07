@@ -11,25 +11,30 @@ AutoHideTooltip(Txt, Time, X="", Y="") {
 	Return
 }
 
-IsEnabledSESendKey() {
+IsEnabledSESendKey(type = 0) {
 	global
 	if (WinActive("ahk_group RawInput") || WinActive("ahk_group Terminal") || _IsDisabledSESendKey) {
 		return 0
 	}
+	if (type == 0 && WinActive("ahk_group VimIDE")) {
+		return 0
+	}
 	return 1
 }
-SESendKey(key) {
-	if (IsEnabledSESendKey()) {
+
+SESendKey(key, type = 0) {
+	if (IsEnabledSESendKey(type)) {
 		Send {Blind}%key%
 	} else {
 		Send {Blind}%A_ThisHotkey%
 	}
 	Return
 }
-SENBSendKey(key) {
-	if (IsEnabledSESendKey()) {
+
+SENBSendKey(key, type = 0) {
+	if (IsEnabledSESendKey(type)) {
 		if (GetKeyState("Shift") == 1) {
-		MsgBox, OK
+			MsgBox, OK
 		}
 		GetKeyState, state, Shift
 		if (state != "D") GetKeyState, state, Alt
@@ -61,15 +66,16 @@ SESendKeyToggle() {
 
 #!Enter::SESendKeyToggle()
 
+^p::SENBSendKey("{Up}", 1)
+^n::SENBSendKey("{Down}", 1)
+
 ^m::SENBSendKey("{Enter}")
 
 ^f::SENBSendKey("{Right}")
 ^b::SENBSendKey("{Left}")
-^p::SENBSendKey("{Up}")
-^n::SENBSendKey("{Down}")
 ^e::SENBSendKey("{End}")
 ^a::SENBSendKey("{Home}")
 
 ^h::SENBSendKey("{BS}")
-^w::SESendKey("^{BS}")
+^w::SENBSendKey("^{BS}")
 ^d::SENBSendKey("{Del}")
