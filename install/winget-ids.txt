@@ -1,0 +1,42 @@
+
+AutoHotkey.AutoHotkey
+Google.JapaneseIME
+VideoLAN.VLC
+Microsoft.PowerToys
+# Bandisoft.Bandizip
+mcmilk.7zip-zstd
+# Microsoft.PowerAutomateDesktop
+Learnpulse.Screenpresso
+Wondershare.PDFelement.11
+
+# Dropbox.Dropbox
+Google.Chrome
+Ablaze.Floorp
+Vivaldi.Vivaldi
+Mozilla.Firefox
+Betterbird.Betterbird
+
+dotPDN.PaintDotNet
+# GIMP.GIMP.3
+# KDE.Kdenlive
+Microsoft.wingetcreate
+
+KDE.KDEConnect
+Obsidian.Obsidian
+Joplin.Joplin
+
+Microsoft.PowerShell
+Microsoft.VisualStudioCode
+Git.Git
+Telerik.Fiddler.Classic
+Python.Python.3.13
+WinMerge.WinMerge
+vim.vim
+neovim.neovim
+Kittyfisto.Tailviewer
+jdx.mise
+DenoLand.Deno
+
+BurntSushi.ripgrep.MSVC
+junegunn.fzf
+ajeetdsouza.zoxide

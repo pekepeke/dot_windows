@@ -1,3 +1,6 @@
+!.empty
+!.gitkeep
+!helper/.empty
 .DS_Store
 usr/bin
 usr/local/bin
@@ -9,4 +12,4 @@ lib/chef/tmp
 lib/chef/cookbooks
 lib/chef/.bundle
 lib/chef/vendor
-
+helper/
